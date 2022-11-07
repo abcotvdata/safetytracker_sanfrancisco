@@ -1,0 +1,101 @@
+district,category,total18,total19,total20,total21,last12mos
+Southern,Homicide,2,1,3,6,3
+Southern,Rape,72,58,36,29,37
+Southern,Robbery,320,350,258,227,271
+Southern,Aggravated Assault,322,287,280,280,342
+Southern,Human Trafficking - Sex Act,32,3,3,4,3
+Southern,Human Trafficking - Inv Serv,0,0,0,0,0
+Southern,Burglary,861,677,939,854,766
+Southern,Larceny Theft,5903,4702,2564,3321,4415
+Southern,Motor Vehicle Theft,520,463,486,559,579
+Southern,Arson,35,29,46,54,39
+Bayview,Homicide,10,13,14,15,15
+Bayview,Rape,26,31,18,21,25
+Bayview,Robbery,339,347,262,221,218
+Bayview,Aggravated Assault,389,353,368,371,367
+Bayview,Human Trafficking - Sex Act,1,2,0,2,1
+Bayview,Human Trafficking - Inv Serv,0,0,0,0,0
+Bayview,Burglary,499,438,452,522,560
+Bayview,Larceny Theft,2226,2269,1749,1636,1588
+Bayview,Motor Vehicle Theft,671,731,958,1015,1054
+Bayview,Arson,49,54,58,76,37
+Mission,Homicide,10,5,5,9,9
+Mission,Rape,118,93,25,32,34
+Mission,Robbery,470,491,346,353,423
+Mission,Aggravated Assault,502,467,309,378,388
+Mission,Human Trafficking - Sex Act,15,22,9,3,1
+Mission,Human Trafficking - Inv Serv,0,0,0,0,0
+Mission,Burglary,589,485,881,966,804
+Mission,Larceny Theft,5079,4438,2772,3072,3579
+Mission,Motor Vehicle Theft,669,561,772,900,963
+Mission,Arson,42,39,68,69,39
+Northern,Homicide,1,5,1,7,7
+Northern,Rape,44,43,32,25,33
+Northern,Robbery,368,375,335,314,282
+Northern,Aggravated Assault,258,265,216,248,304
+Northern,Human Trafficking - Sex Act,3,0,1,3,1
+Northern,Human Trafficking - Inv Serv,0,0,0,0,0
+Northern,Burglary,819,882,1539,1318,986
+Northern,Larceny Theft,7494,8194,5077,5640,6323
+Northern,Motor Vehicle Theft,495,511,737,668,683
+Northern,Arson,25,40,60,45,57
+Tenderloin,Homicide,9,11,10,10,6
+Tenderloin,Rape,40,35,22,28,32
+Tenderloin,Robbery,508,442,341,294,352
+Tenderloin,Aggravated Assault,386,413,376,430,476
+Tenderloin,Human Trafficking - Sex Act,3,3,3,5,3
+Tenderloin,Human Trafficking - Inv Serv,0,0,0,0,0
+Tenderloin,Burglary,245,206,322,295,219
+Tenderloin,Larceny Theft,2563,2529,1084,1013,1690
+Tenderloin,Motor Vehicle Theft,133,160,234,245,226
+Tenderloin,Arson,28,24,23,26,24
+Central,Homicide,3,2,5,1,1
+Central,Rape,44,31,22,18,26
+Central,Robbery,568,502,348,314,336
+Central,Aggravated Assault,234,255,168,208,237
+Central,Human Trafficking - Sex Act,22,11,5,2,2
+Central,Human Trafficking - Inv Serv,0,0,0,0,0
+Central,Burglary,979,887,1107,862,736
+Central,Larceny Theft,9695,8931,3948,7603,8165
+Central,Motor Vehicle Theft,418,464,423,458,476
+Central,Arson,32,43,57,34,35
+Park,Homicide,1,0,0,4,3
+Park,Rape,15,9,7,7,11
+Park,Robbery,70,59,47,49,52
+Park,Aggravated Assault,85,73,67,64,59
+Park,Human Trafficking - Sex Act,1,1,0,1,0
+Park,Human Trafficking - Inv Serv,0,0,0,0,0
+Park,Burglary,324,280,618,488,454
+Park,Larceny Theft,1868,1885,1769,1747,1674
+Park,Motor Vehicle Theft,259,258,358,295,310
+Park,Arson,8,12,9,11,6
+Richmond,Homicide,1,0,1,1,1
+Richmond,Rape,12,18,13,8,9
+Richmond,Robbery,97,98,102,113,85
+Richmond,Aggravated Assault,76,83,71,78,83
+Richmond,Human Trafficking - Sex Act,0,0,1,0,0
+Richmond,Human Trafficking - Inv Serv,0,0,0,0,0
+Richmond,Burglary,285,340,635,628,438
+Richmond,Larceny Theft,3040,3698,2634,3097,3342
+Richmond,Motor Vehicle Theft,256,331,491,384,368
+Richmond,Arson,21,8,36,24,7
+Ingleside,Homicide,5,2,8,3,8
+Ingleside,Rape,37,30,20,16,19
+Ingleside,Robbery,333,290,258,224,227
+Ingleside,Aggravated Assault,255,219,225,208,232
+Ingleside,Human Trafficking - Sex Act,2,2,0,1,0
+Ingleside,Human Trafficking - Inv Serv,0,0,0,0,0
+Ingleside,Burglary,573,418,589,659,579
+Ingleside,Larceny Theft,1767,2026,1870,1619,1746
+Ingleside,Motor Vehicle Theft,522,490,934,873,951
+Ingleside,Arson,32,18,25,26,24
+Taraval,Homicide,4,2,1,0,2
+Taraval,Rape,19,32,9,11,9
+Taraval,Robbery,147,143,102,125,124
+Taraval,Aggravated Assault,130,125,100,105,108
+Taraval,Human Trafficking - Sex Act,21,3,0,3,1
+Taraval,Human Trafficking - Inv Serv,0,0,0,0,0
+Taraval,Burglary,507,345,481,620,514
+Taraval,Larceny Theft,2502,2842,2014,2162,2820
+Taraval,Motor Vehicle Theft,405,455,668,610,640
+Taraval,Arson,16,18,29,23,13
