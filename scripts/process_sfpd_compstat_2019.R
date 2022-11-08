@@ -4,7 +4,7 @@ library(tidyr)
 
 
 # Load the file we want for 2021 (December / Year End)
-pdftext <- pdf_text("data/source/sf/annual/2019yearend.pdf") %>% strsplit(split = "\n")
+pdftext <- pdf_text("data/source/annual/2019yearend.pdf") %>% strsplit(split = "\n")
 
 # difference with 2022 format is there is one page for each district
 
@@ -1008,7 +1008,7 @@ past_crime_all <- rbind(past_crime_citywide,past_crime_central,past_crime_southe
 names(past_crime_all) <- c("category","total2018_rev","total2019","district")
 
 # save 2018-2019 annual file and rds archive
-saveRDS(past_crime_all, "scripts/sf/rds/sf_crime_2019.rds")
+saveRDS(past_crime_all, "scripts/rds/sf_crime_2019.rds")
 
 
 rm(past_crime_all, past_crime_citywide,past_crime_central,past_crime_southern,past_crime_bayview,past_crime_mission,past_crime_northern,past_crime_park,past_crime_richmond,past_crime_ingleside,past_crime_taraval,past_crime_tenderloin)

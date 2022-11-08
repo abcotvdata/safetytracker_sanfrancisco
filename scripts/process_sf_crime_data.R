@@ -6,22 +6,22 @@ library(zoo)
 
 # mass process the four annual PDFs that give us compstat data for 2019-2022ytd
 # we don't need to repeat this step here, except for once a month with 2022 file
-# source("scripts/sf/process_sfpd_compstat_2019version.R")
-# source("scripts/sf/process_sfpd_compstat_2020version.R")
-# source("scripts/sf/process_sfpd_compstat_2021version.R")
-# source("scripts/sf/process_sfpd_compstat_2022version.R")
+# source("scripts/process_sfpd_compstat_2019version.R")
+# source("scripts/process_sfpd_compstat_2020version.R")
+# source("scripts/process_sfpd_compstat_2021version.R")
+# source("scripts/process_sfpd_compstat_2022version.R")
 
 # Load pre-processed files for rds store files
 # annual crime files scraped from PDFs
-sf_crime_2019 <- readRDS("scripts/sf/rds/sf_crime_2019.rds")
-sf_crime_2020 <- readRDS("scripts/sf/rds/sf_crime_2020.rds")
-sf_crime_2021 <- readRDS("scripts/sf/rds/sf_crime_2021.rds")
-sf_crime_2022 <- readRDS("scripts/sf/rds/sf_crime_2022.rds")
+sf_crime_2019 <- readRDS("scripts/rds/sf_crime_2019.rds")
+sf_crime_2020 <- readRDS("scripts/rds/sf_crime_2020.rds")
+sf_crime_2021 <- readRDS("scripts/rds/sf_crime_2021.rds")
+sf_crime_2022 <- readRDS("scripts/rds/sf_crime_2022.rds")
 # San Francisco police districts geo file with populations
-districts_geo <- readRDS("scripts/sf/rds/sfpd_districts.rds")
+districts_geo <- readRDS("scripts/rds/sfpd_districts.rds")
 # recent crime files scraped from SFPD's Tableau site
-sf_crime_last12mos_add <- readRDS("scripts/sf/rds/sf_crime_last12mos_add.rds")
-sf_crime_ytd <- readRDS("scripts/sf/rds/sf_crime_ytd.rds")
+sf_crime_last12mos_add <- readRDS("scripts/rds/sf_crime_last12mos_add.rds")
+sf_crime_ytd <- readRDS("scripts/rds/sf_crime_ytd.rds")
 
 # Combined the annual files and order columns for building tracker table
 sf_crime <- cbind(sf_crime_2019,sf_crime_2020,sf_crime_2021,sf_crime_2022)
@@ -57,7 +57,7 @@ sf_crime <- sf_crime %>% filter(category!="Total Part 1 Violent Crimes" & catego
 # Get latest date in our file and save for
 # automating the updated date text in building tracker
 asofdate <- max(sf_crime$updated)
-saveRDS(asofdate,"scripts/sf/rds/asofdate.rds")
+saveRDS(asofdate,"scripts/rds/asofdate.rds")
 
 # Divide into citywide_crime and district_crime files
 citywide_crime <- sf_crime %>% filter(district=="Citywide")
@@ -100,7 +100,7 @@ district_crime <- district_crime %>%
 
 # create a quick long-term annual table
 district_yearly <- district_crime %>% select(1,3:7,10) %>% st_drop_geometry()
-write_csv(district_yearly,"data/output/sf/yearly/district_yearly.csv")
+write_csv(district_yearly,"data/output/yearly/district_yearly.csv")
 
 ### CITYWIDE
 # set value of sf_population
@@ -136,7 +136,7 @@ district_crime <- district_crime %>%
 
 # create a quick long-term annual table
 citywide_yearly <- citywide_crime %>% select(2:6,9)
-write_csv(citywide_yearly,"data/output/sf/yearly/citywide_yearly.csv")
+write_csv(citywide_yearly,"data/output/yearly/citywide_yearly.csv")
 
 # Now make individual crime files for trackers
 # filter precinct versions - using beat for code consistency
@@ -165,37 +165,37 @@ write_csv(deaths,"data/source/health/death_rates.csv")
 #### 
 # Archive latest files as csv and rds store for use in trackers
 # First save the weekly files as output csvs for others to use
-write_csv(district_crime,"data/output/sf/weekly/district_crime.csv")
-write_csv(citywide_crime,"data/output/sf/weekly/citywide_crime.csv")
+write_csv(district_crime,"data/output/weekly/district_crime.csv")
+write_csv(citywide_crime,"data/output/weekly/citywide_crime.csv")
 # Archive a year's worth of week-numbered files from the weekly updates
-write_csv(district_crime,paste0("data/output/sf/archive/district_crime_week",sf_tableau_update,".csv"))
-write_csv(citywide_crime,paste0("data/output/sf/archive/citywide_crime_week",sf_tableau_update,".csv"))
+write_csv(district_crime,paste0("data/output/archive/district_crime_week",sf_tableau_update,".csv"))
+write_csv(citywide_crime,paste0("data/output/archive/citywide_crime_week",sf_tableau_update,".csv"))
 # Now save the files needed for trackers into RDS store in scripts for GH Actions
 # precinct versions
-saveRDS(district_crime,"scripts/sf/rds/district_crime.rds")
-saveRDS(murders_district,"scripts/sf/rds/murders_district.rds")
-saveRDS(sexassaults_district,"scripts/sf/rds/sexassaults_district.rds")
-saveRDS(robberies_district,"scripts/sf/rds/robberies_district.rds")
-saveRDS(assaults_district,"scripts/sf/rds/assaults_district.rds")
-saveRDS(burglaries_district,"scripts/sf/rds/burglaries_district.rds")
-saveRDS(thefts_district,"scripts/sf/rds/thefts_district.rds")
-saveRDS(autothefts_district,"scripts/sf/rds/autothefts_district.rds")
+saveRDS(district_crime,"scripts/rds/district_crime.rds")
+saveRDS(murders_district,"scripts/rds/murders_district.rds")
+saveRDS(sexassaults_district,"scripts/rds/sexassaults_district.rds")
+saveRDS(robberies_district,"scripts/rds/robberies_district.rds")
+saveRDS(assaults_district,"scripts/rds/assaults_district.rds")
+saveRDS(burglaries_district,"scripts/rds/burglaries_district.rds")
+saveRDS(thefts_district,"scripts/rds/thefts_district.rds")
+saveRDS(autothefts_district,"scripts/rds/autothefts_district.rds")
 # city versions
-saveRDS(citywide_crime,"scripts/sf/rds/citywide_crime.rds")
-saveRDS(murders_city,"scripts/sf/rds/murders_city.rds")
-saveRDS(sexassaults_city,"scripts/sf/rds/sexassaults_city.rds")
-saveRDS(robberies_city,"scripts/sf/rds/robberies_city.rds")
-saveRDS(assaults_city,"scripts/sf/rds/assaults_city.rds")
-saveRDS(burglaries_city,"scripts/sf/rds/burglaries_city.rds")
-saveRDS(thefts_city,"scripts/sf/rds/thefts_city.rds")
-saveRDS(autothefts_city,"scripts/sf/rds/autothefts_city.rds")
+saveRDS(citywide_crime,"scripts/rds/citywide_crime.rds")
+saveRDS(murders_city,"scripts/rds/murders_city.rds")
+saveRDS(sexassaults_city,"scripts/rds/sexassaults_city.rds")
+saveRDS(robberies_city,"scripts/rds/robberies_city.rds")
+saveRDS(assaults_city,"scripts/rds/assaults_city.rds")
+saveRDS(burglaries_city,"scripts/rds/burglaries_city.rds")
+saveRDS(thefts_city,"scripts/rds/thefts_city.rds")
+saveRDS(autothefts_city,"scripts/rds/autothefts_city.rds")
 
 ### Some tables for charts for our pages
-sf_crime_totals %>% write_csv("data/output/sf/yearly/totals_by_type.csv")
-murders_city %>% select(2:6,9) %>% write_csv("data/output/sf/yearly/murders_city.csv")
-sexassaults_city %>% select(2:6,9) %>%  write_csv("data/output/sf/yearly/sexassaults_city.csv")
-autothefts_city %>% select(2:6,9) %>%  write_csv("data/output/sf/yearly/autothefts_city.csv")
-thefts_city %>% select(2:6,9) %>%  write_csv("data/output/sf/yearly/thefts_city.csv")
-burglaries_city %>% select(2:6,9) %>%  write_csv("data/output/sf/yearly/burglaries_city.csv")
-robberies_city %>% select(2:6,9) %>%  write_csv("data/output/sf/yearly/robberies_city.csv")
-assaults_city %>% select(2:6,9) %>%  write_csv("data/output/sf/yearly/assaults_city.csv")
+sf_crime_totals %>% write_csv("data/output/yearly/totals_by_type.csv")
+murders_city %>% select(2:6,9) %>% write_csv("data/output/yearly/murders_city.csv")
+sexassaults_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/sexassaults_city.csv")
+autothefts_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/autothefts_city.csv")
+thefts_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/thefts_city.csv")
+burglaries_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/burglaries_city.csv")
+robberies_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/robberies_city.csv")
+assaults_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/assaults_city.csv")

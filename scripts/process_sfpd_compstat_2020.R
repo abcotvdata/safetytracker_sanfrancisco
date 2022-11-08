@@ -4,7 +4,7 @@ library(tidyr)
 
 
 # Download the file we want for 2020 (December / Year End)
-pdftext <- pdf_text("data/source/sf/annual/2020yearend.pdf") %>% strsplit(split = "\n")
+pdftext <- pdf_text("data/source/annual/2020yearend.pdf") %>% strsplit(split = "\n")
 
 ### CITY WIDE ###
 
@@ -1006,7 +1006,7 @@ past_crime_all <- rbind(past_crime_citywide,past_crime_central,past_crime_southe
 names(past_crime_all) <- c("category","total2019_rev","total2020","district")
 
 # save 2020 annual file and rds archive
-saveRDS(past_crime_all, "scripts/sf/rds/sf_crime_2020.rds")
+saveRDS(past_crime_all, "scripts/rds/sf_crime_2020.rds")
 
 rm(past_crime_all, past_crime_citywide,past_crime_central,past_crime_southern,past_crime_bayview,past_crime_mission,past_crime_northern,past_crime_park,past_crime_richmond,past_crime_ingleside,past_crime_taraval,past_crime_tenderloin)
 

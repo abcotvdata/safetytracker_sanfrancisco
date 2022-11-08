@@ -9,10 +9,10 @@ library(sf)
 # GEOGRAPHY
 # downloading geojson of sfpd districts from city open data market
 download.file("https://data.sfgov.org/api/geospatial/wkhw-cjsf?method=export&format=GeoJSON",
-              "data/source/sf/geo/sf_police_districts.geojson")
+              "data/source/geo/sf_police_districts.geojson")
 
 # Read in geojson and then transform to sf format
-districts_geo <- st_read("data/source/sf/geo/sf_police_districts.geojson") %>% st_transform(3857)
+districts_geo <- st_read("data/source/geo/sf_police_districts.geojson") %>% st_transform(3857)
 
 # Get demographic data for Census block groups to aggregate/apportion to precinct geography
 # Also transforming to match the planar projection of NYPD's beats spatial file
@@ -51,9 +51,9 @@ districts_geo <- districts_geo %>% st_transform(4326)
 districts_geo <- st_make_valid(districts_geo)
 
 # saving a clean geojson and separate RDS for use in tracker
-file.remove("data/source/sf/geo/sfpd_districts.geojson")
-st_write(districts_geo,"data/source/sf/geo/sfpd_districts.geojson")
-saveRDS(districts_geo,"scripts/sf/rds/sfpd_districts.rds")
+file.remove("data/source/geo/sfpd_districts.geojson")
+st_write(districts_geo,"data/source/geo/sfpd_districts.geojson")
+saveRDS(districts_geo,"scripts/rds/sfpd_districts.rds")
 
 # BARE PRECINCT MAP JUST FOR TESTING PURPOSES
 # CAN COMMENT OUT ONCE FINALIZED
