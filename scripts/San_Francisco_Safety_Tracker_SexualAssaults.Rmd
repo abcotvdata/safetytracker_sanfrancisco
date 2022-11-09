@@ -235,8 +235,6 @@ Sexual assaults over the last 12 months are <h8>`r ifelse(sexassaults_city$inc_p
 
 The city averaged <h8>`r round(sexassaults_city$last12mos/52,0)`</h8> sexual assaults a week over the last 12 months. In 2019, that number was <h8>`r round(sexassaults_city$total19/52,0)`</h8> a week.
 
-The figures included here are for cases San Francisco police classify as "criminal sexual assault," which includes any forcible rape - or attempted rape - of any person regardless of age or gender.
-
 <subhead>A closer look at San Francisco sexual assaults neighborhood by neighborhood</subhead>
 
 The danger is not the same neighborhood to neighborhood. ABC7's data team looked at the San Francisco Police Department's public data about sexual assault reports by neighborhood from 2019 through `r format(asofdate, "%B %d, %Y")`.
@@ -252,9 +250,9 @@ Click on any neighborhood on the map to see detailed numbers, rates and trends. 
 
 # Set bins for numbers of crimes for sexassaults map
 sexassaultbins1 <- c(0,
+                15,
                 30,
-                60,
-                75,
+                70,
                 100,
                 200)
 sexassaultbins2 <- c(0,
