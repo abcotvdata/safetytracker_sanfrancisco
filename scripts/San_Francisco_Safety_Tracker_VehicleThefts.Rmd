@@ -203,7 +203,7 @@ sf_population <- 815201
 <h2>Choose a different Bay Area city to explore: <select onchange="window.location=this.value">
 <option value="https://abcotvdata.github.io/safetytracker_sanfrancisco/San_Francisco_Safety_Tracker.html">San Francisco</option>
 <option value="https://abcotvdata.github.io/safetytracker_oakland/Oakland_Safety_Tracker.html">Oakland</option>
-<option value="https://abcotvdata.github.io/safetytracker_sanjose/San_Jose_Safety_Tracker_Assaults.html">San Jose</option>
+<option value="https://abcotvdata.github.io/safetytracker_sanjose/San_Jose_Safety_Tracker.html">San Jose</option>
 </select></h2>
 
 <div class="cardContainer">
