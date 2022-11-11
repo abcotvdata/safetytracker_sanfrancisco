@@ -1,7 +1,3 @@
-
-
-
-library(tidyverse)
 library(tidyverse)
 library(sf)
 library(readxl)
@@ -139,6 +135,10 @@ district_crime <- district_crime %>%
 
 # create a quick long-term annual table
 citywide_yearly <- citywide_crime %>% select(2:6,9)
+# add additional years from state archive of reported ucr crimes back to 2000
+yearly_archive <- read_csv("data/source/annual/sf_annual_state.csv")
+citywide_yearly <- right_join(citywide_yearly,yearly_archive %>% select(1:18,23),by="category") %>% select(1,7:24,2:6)
+# save for annual charts  
 write_csv(citywide_yearly,"data/output/yearly/citywide_yearly.csv")
 
 # Now make individual crime files for trackers
@@ -195,10 +195,10 @@ saveRDS(autothefts_city,"scripts/rds/autothefts_city.rds")
 
 ### Some tables for charts for our pages
 sf_crime_totals %>% write_csv("data/output/yearly/totals_by_type.csv")
-murders_city %>% select(2:6,9) %>% write_csv("data/output/yearly/murders_city.csv")
-sexassaults_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/sexassaults_city.csv")
-autothefts_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/autothefts_city.csv")
-thefts_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/thefts_city.csv")
-burglaries_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/burglaries_city.csv")
-robberies_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/robberies_city.csv")
-assaults_city %>% select(2:6,9) %>%  write_csv("data/output/yearly/assaults_city.csv")
+citywide_yearly %>% filter(category=="Homicide") %>% write_csv("data/output/yearly/murders_city.csv")
+citywide_yearly %>% filter(category=="Rape") %>%  write_csv("data/output/yearly/sexassaults_city.csv")
+citywide_yearly %>% filter(category=="Motor Vehicle Theft") %>%  write_csv("data/output/yearly/autothefts_city.csv")
+citywide_yearly %>% filter(category=="Larceny Theft") %>%  write_csv("data/output/yearly/thefts_city.csv")
+citywide_yearly %>% filter(category=="Burglary") %>%  write_csv("data/output/yearly/burglaries_city.csv")
+citywide_yearly %>% filter(category=="Robbery") %>%  write_csv("data/output/yearly/robberies_city.csv")
+citywide_yearly %>% filter(category=="Aggravated Assault") %>%  write_csv("data/output/yearly/assaults_city.csv")
