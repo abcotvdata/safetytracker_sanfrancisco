@@ -234,7 +234,7 @@ Aggravated assaults over the last 12 months are <h8>`r ifelse(assaults_city$inc_
 
 The city averaged <h8>`r prettyNum(round(assaults_city$last12mos/52,0), big.mark=",")`</h8> aggravated assaults a week over the last 12 months. In 2019, that number was <h8>`r prettyNum(round(assaults_city$total19/52,0), big.mark=",")`</h8> a week.
 
-The totals include only aggravated assaults, which the city police define as someone being attacked or seriously injured by another person, whether or not they used a firearm or other weapon.
+The totals include only aggravated assaults, which police generally define as someone being attacked or seriously injured by another person, whether or not they used a firearm or other weapon.
 
 <subhead>A closer look at San Francisco assaults neighborhood by neighborhood</subhead>
 
