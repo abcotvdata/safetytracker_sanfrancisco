@@ -189,7 +189,7 @@ th {
 sf_population <- 815201
 ```
 
-<h2>ABC7 is tracking crime and safety across the city of San Francisco and in your neighborhood. 
+<h2>ABC7 is tracking crime and safety across the San Francisco and in your neighborhood. 
 
 <br>You can choose which crime to examine: <select onchange="window.location=this.value">
 <option value="https://abcotvdata.github.io/safetytracker_bayarea/San_Francisco_Safety_Tracker_VehicleThefts.html">Vehicle Thefts</option>

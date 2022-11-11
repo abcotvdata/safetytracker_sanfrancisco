@@ -3,7 +3,6 @@ library(tidyverse)
 library(tidyr)
 library(lubridate)
 
-
 # Download the file we want for 2022 (latest month)
 # OPEN WORK: We need a process to automate downloading this without knowing the name or when posted, which are both erratic
 # download.file("https://www.sanfranciscopolice.org/sites/default/files/2022-10/SFPDCompstatReportSeptember2022-20221011.pdf",
@@ -1021,5 +1020,3 @@ past_crime_all$update_date <- pdf_latest
 saveRDS(past_crime_all, "scripts/rds/sf_crime_2022.rds")
 
 rm(past_crime_all, past_crime_citywide,past_crime_central,past_crime_southern,past_crime_bayview,past_crime_mission,past_crime_northern,past_crime_park,past_crime_richmond,past_crime_ingleside,past_crime_taraval,past_crime_tenderloin)
-
-
