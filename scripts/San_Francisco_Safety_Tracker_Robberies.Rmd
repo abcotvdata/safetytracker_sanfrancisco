@@ -249,8 +249,8 @@ Click on any neighborhood on the map to see detailed figures, rates and trends. 
 # Set bins for numbers of crimes for robberies map
 robberybins1 <- c(0,
                 100,
-                200,
                 300,
+                400,
                 500,
                 1500)
 robberybins2 <- c(0,
