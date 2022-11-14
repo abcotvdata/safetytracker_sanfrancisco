@@ -236,7 +236,7 @@ However, the murder rate over the last 12 months is <h8>`r case_when((murders_ci
           (murders_city$rate_last12-murders_city$rate_prior3years)<=-0.25 ~ "down",
           TRUE ~ "about the same ")`</h8> compared to the annual average over the last three years, and the frequency of killings remains higher than it was before the pandemic.
 
-The city averaged <h8>`r round(murders_city$last12mos/12,1)`</h8> homicides a month over the last 12 months. In 2019, that number was <h8>`r round(murders_city$total19/12,1)`</h8> a month.
+The city averaged about <h8>`r round(murders_city$last12mos/12,0)`</h8> homicides a month over the last 12 months. In 2019, that number was about <h8>`r round(murders_city$total19/12,0)`</h8> a month.
 
 One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents. That's far lower than the risk of dying in a vehicle crash in California. The rate has risen slightly to <h8>`r murders_city$rate_last12`</h8> in the last 12 months.
 <br>
