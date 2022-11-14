@@ -7,6 +7,7 @@ library(lubridate)
 # OPEN WORK: We need a process to automate downloading this without knowing the name or when posted, which are both erratic
 # download.file("https://www.sanfranciscopolice.org/sites/default/files/2022-10/SFPDCompstatReportSeptember2022-20221011.pdf",
 #              "2022latest.pdf")
+# source site is here: https://www.sanfranciscopolice.org/stay-safe/crime-data/crime-reports
 
 # extract text from latest file
 pdftext <- pdf_text("data/source/recent/2022_latest.pdf") %>% strsplit(split = "\n")

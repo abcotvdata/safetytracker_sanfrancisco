@@ -44,7 +44,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 450)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 500)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/SFScreen_date.png")
 
 remDr$navigate(urlSF)
@@ -62,7 +62,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/SFScreen.png")
 
 remDr$navigate(urlBayview)
@@ -80,7 +80,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/BayviewScreen.png")
 
 remDr$navigate(urlCentral)
@@ -98,7 +98,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/CentralScreen.png")
 
 remDr$navigate(urlIngleside)
@@ -116,7 +116,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/InglesideScreen.png")
 
 remDr$navigate(urlMission)
@@ -134,7 +134,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/MissionScreen.png")
 
 remDr$navigate(urlNorthern)
@@ -152,7 +152,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/NorthernScreen.png")
 
 remDr$navigate(urlPark)
@@ -170,7 +170,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/ParkScreen.png")
 
 remDr$navigate(urlRichmond)
@@ -188,7 +188,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/RichmondScreen.png")
 
 remDr$navigate(urlSouthern)
@@ -206,7 +206,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/SouthernScreen.png")
 
 remDr$navigate(urlTaraval)
@@ -224,7 +224,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/TaravalScreen.png")
 
 remDr$navigate(urlTenderloin)
@@ -242,7 +242,7 @@ Sys.sleep(3)   # slight delay to let page load
 windows_handles <- remDr$getWindowHandles()
 Sys.sleep(2)
 remDr$switchToWindow(windows_handles[[1]])
-remDr$executeScript("scrollBy(0, 1260)") # scrolls to numbers
+remDr$executeScript("scrollBy(0, 1300)") # scrolls to numbers
 remDr$screenshot(display = FALSE, useViewer = FALSE, file = "data/source/images/TenderloinScreen.png")
 
 # we have the screen images we need
@@ -268,7 +268,7 @@ Tenderloin_screenimage <- image_read("data/source/images/TenderloinScreen.png")
 # We are following this approach to carefully map values to crimes
 # And to ensure we account for cells that are zero but SFPD shows blank
 # date first
-SF_update <- image_crop(SF_screenimage_date, "400x70+1260+480")
+SF_update <- image_crop(SF_screenimage_date, "400x70+1265+460")
 # crime data for all
 SF_title1 <- image_crop(SF_screenimage, "200x105+940+112")
 SF_title2 <- image_crop(SF_screenimage, "200x105+940+224")
