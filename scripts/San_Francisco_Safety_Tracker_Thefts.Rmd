@@ -407,12 +407,16 @@ san_francisco_theft_map
 <br>
 <br>
 <!-- <subhead>Thefts month by month, 2019 to present</subhead> -->
-
 <iframe title="Larceny thefts year by year in San Francisco" aria-label="Column Chart" id="datawrapper-chart-KN0kY" src="https://datawrapper.dwcdn.net/KN0kY/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
   <br>
 <br>
 <!-- <subhead>Risk of property crime in major cities</subhead> -->
-
+<iframe title="Larceny clearance rate year by year in San Francisco" aria-label="Column Chart" id="datawrapper-chart-EQBCf" src="https://datawrapper.dwcdn.net/EQBCf/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="538" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+  <br>
+<br>
 <iframe title="2021 property crime rate comparison in select major cities" aria-label="Bar Chart" id="datawrapper-chart-lqXu5" src="https://datawrapper.dwcdn.net/lqXu5/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="436" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
+  <br>
+<br>

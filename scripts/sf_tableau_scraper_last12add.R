@@ -4,6 +4,9 @@ library(magick)
 library(tesseract)
 library(lubridate)
 
+# OPEN WORK TO AUTOMATE THIS STEP
+# SEEMS TO UPDATE OVERNIGHT MONDAY/TUESDAY
+
 # Sets a series of URLs for each police district in SFPD's tableau
 urlSF <- "https://public.tableau.com/app/profile/san.francisco.police.department/viz/CrimeNumbersDashboardMobile/Crime_Numbers_Mobile"
 urlBayview <- "https://public.tableau.com/app/profile/san.francisco.police.department/viz/CrimeNumbersDashboardMobile/Crime_Numbers_Mobile?DISTRICT=Bayview"

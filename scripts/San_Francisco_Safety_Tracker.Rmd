@@ -424,23 +424,12 @@ san_francisco_murder_map
 
 <iframe title="Homicides year by year in San Francisco" aria-label="Column Chart" id="datawrapper-chart-ydu4n" src="https://datawrapper.dwcdn.net/ydu4n/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
-
-  <br>
-<br>
-
-<!-- <subhead>What kinds of places do murders happen in San Francisco</subhead> -->
-
-<!-- <iframe title="What kinds of places do murders happen in San Francisco" aria-label="Table" id="datawrapper-chart-2Z1gD" src="https://datawrapper.dwcdn.net/2Z1gD/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="422" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-</script> -->
 <br>
 <br>
-<!-- <subhead>What time of day do murders happen?</subhead> -->
-
-<!-- <iframe title="What time of day do murders happen?" aria-label="Donut Chart" id="datawrapper-chart-j0udh" src="https://datawrapper.dwcdn.net/j0udh/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="432" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Homicide clearance rate year by year in San Francisco" aria-label="Column Chart" id="datawrapper-chart-eYqDD" src="https://datawrapper.dwcdn.net/eYqDD/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="538" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
-<br>  -->
-
+<br>
 <!-- <subhead> comparison to other cities chart </subhead> -->
 
 <iframe title="2021 homicide rate comparison in select major cities" aria-label="Bar Chart" id="datawrapper-chart-0Z5eV" src="https://datawrapper.dwcdn.net/0Z5eV/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="436"  data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();

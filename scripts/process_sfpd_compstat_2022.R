@@ -3,8 +3,11 @@ library(tidyverse)
 library(tidyr)
 library(lubridate)
 
+
+
 # Download the file we want for 2022 (latest month)
 # OPEN WORK: We need a process to automate downloading this without knowing the name or when posted, which are both erratic
+# AS OF NOV. 15TH, THE OCTOBER FILE IS STILL NOT UP
 # download.file("https://www.sanfranciscopolice.org/sites/default/files/2022-10/SFPDCompstatReportSeptember2022-20221011.pdf",
 #              "2022latest.pdf")
 # source site is here: https://www.sanfranciscopolice.org/stay-safe/crime-data/crime-reports
