@@ -7,9 +7,8 @@ library(lubridate)
 
 # Download the file we want for 2022 (latest month)
 # OPEN WORK: We need a process to automate downloading this without knowing the name or when posted, which are both erratic
-# AS OF NOV. 15TH, THE OCTOBER FILE IS STILL NOT UP
-# download.file("https://www.sanfranciscopolice.org/sites/default/files/2022-10/SFPDCompstatReportSeptember2022-20221011.pdf",
-#              "2022latest.pdf")
+download.file("https://www.sanfranciscopolice.org/sites/default/files/2022-12/SFPDCompstat-Nov2022-20221216.pdf",
+              "data/source/recent/2022_latest.pdf")
 # source site is here: https://www.sanfranciscopolice.org/stay-safe/crime-data/crime-reports
 
 # extract text from latest file
@@ -89,7 +88,7 @@ names(past_crime_sf) = c("rawtext","category",
 # for this version grab the time to flag the "updated through" date to attach to data frame at end
 pdf_latest <- past_crime_sf[3,1]
 pdf_latest <- sub(".*\\s+to\\s+", "", pdf_latest)  
-pdf_latest <- dmy(pdf_latest)
+pdf_latest <- mdy(pdf_latest)
 
 past_crime_sf <- past_crime_sf %>% filter(category %in% c("HOMICIDE","RAPE","ROBBERY",
                                         "AGGRAVATED ASSAULT",
