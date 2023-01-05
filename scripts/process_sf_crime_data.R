@@ -57,7 +57,7 @@ sf_crime <- sf_crime %>% filter(category!="Total Part 1 Violent Crimes" & catego
 
 # Get latest date in our file and save for
 # automating the updated date text in building tracker
-asofdate <- max(sf_crime$updated)
+asofdate <- max(sf_crime$updated, na.rm = TRUE)
 saveRDS(asofdate,"scripts/rds/asofdate.rds")
 
 # Divide into citywide_crime and district_crime files
@@ -67,6 +67,8 @@ district_crime <- sf_crime %>% filter(district!="Citywide")
 # Merge the precincts file with geography and populations
 districts_geo$district <- str_to_title(districts_geo$district)
 district_crime <- full_join(districts_geo %>% select(5:7), district_crime, by="district")
+# add date in field if there's any missing
+district_crime$updated[is.na(district_crime$updated)] <- asofdate
 # add zeros where there were no crimes tallied that year
 district_crime[is.na(district_crime)] <- 0
 
@@ -107,6 +109,8 @@ write_csv(district_yearly,"data/output/yearly/district_yearly.csv")
 # set value of sf_population
 sf_population <- 815201
 
+# add date in field if there's any missing
+citywide_crime$updated[is.na(citywide_crime$updated)] <- asofdate
 # add zeros where there were no crimes tallied that year
 citywide_crime[is.na(citywide_crime)] <- 0
 # add 3-year annualized averages
