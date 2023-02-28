@@ -1519,8 +1519,11 @@ sf_crime$category <- gsub("VEHICLE"," VEHICLE",sf_crime$category)
 sf_crime$category <- gsub("HUMAN","HUMAN ",sf_crime$category)
 sf_crime$category <- gsub("TRAFFICKING-","TRAFFICKING -",sf_crime$category)
 
-sf_crime <- sf_crime %>% mutate_all(na_if,"")
+#sf_crime <- sf_crime %>% mutate_all(na_if,"")
+
 sf_crime <- sf_crime %>% filter(!(is.na(sf_crime$category) & is.na(sf_crime$last12mos_add)))
+sf_crime$last12mos_add <- ifelse(is.na(sf_crime$last12mos_add),0,sf_crime$last12mos_add)
+
 
 # we need these unique lists for making the beat tables below
 # this ensures that we get crime details for beats even with zero
