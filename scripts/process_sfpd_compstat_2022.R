@@ -7,7 +7,7 @@ library(lubridate)
 
 # Download the file we want for 2022 (latest month)
 # OPEN WORK: We need a process to automate downloading this without knowing the name or when posted, which are both erratic
-download.file("https://www.sanfranciscopolice.org/sites/default/files/2022-12/SFPDCompstat-Nov2022-20221216.pdf",
+download.file("https://www.sanfranciscopolice.org/sites/default/files/2023-01/SFPDCompstat-Dec2022-20230111.pdf",
               "data/source/recent/2022_latest.pdf")
 # source site is here: https://www.sanfranciscopolice.org/stay-safe/crime-data/crime-reports
 
@@ -78,7 +78,8 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
+
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                 "skip1","this_month","skip2",
@@ -173,7 +174,7 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                          "skip1","this_month","skip2",
@@ -263,7 +264,7 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                          "skip1","this_month","skip2",
@@ -353,7 +354,7 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                          "skip1","this_month","skip2",
@@ -443,7 +444,7 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                          "skip1","this_month","skip2",
@@ -533,7 +534,7 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                          "skip1","this_month","skip2",
@@ -624,7 +625,7 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                          "skip1","this_month","skip2",
@@ -715,7 +716,7 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                          "skip1","this_month","skip2",
@@ -806,7 +807,7 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                          "skip1","this_month","skip2",
@@ -897,7 +898,7 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                          "skip1","this_month","skip2",
@@ -988,7 +989,7 @@ names(past_crime_sf) <- c("rawtext")
 # remove the long white space on each end of each line
 past_crime_sf$rawtext2 <- strsplit(past_crime_sf$rawtext, "\\s+\\s+")
 # flatten the list this creates in processed column
-past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2)
+past_crime_sf <- past_crime_sf %>% unnest_wider(rawtext2, names_sep = "_")
 # name the columns temporarily
 names(past_crime_sf) = c("rawtext","category",
                          "skip1","this_month","skip2",
@@ -1016,7 +1017,7 @@ past_crime_sf$district <- "Tenderloin"
 past_crime_tenderloin <- past_crime_sf
 
 past_crime_all <- rbind(past_crime_citywide,past_crime_central,past_crime_southern,past_crime_bayview,past_crime_mission,past_crime_northern,past_crime_park,past_crime_richmond,past_crime_ingleside,past_crime_taraval,past_crime_tenderloin)
-names(past_crime_all) <- c("category","total2021_ytd","total2022","district")
+names(past_crime_all) <- c("category","total2021_rev","total2022","district")
 past_crime_all$update_date <- pdf_latest
 
 # save 2021 annual file and rds archive

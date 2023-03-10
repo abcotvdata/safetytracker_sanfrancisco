@@ -1,34 +1,34 @@
-district,category,total18,total19,total20,total21,ytd2022,updated,last12mos
-Citywide,Total Part 1 Violent Crimes,6458,6134,4883,4912,NA,NA,NA
-Citywide,Total Part 1 Property Crimes,52946,51710,39760,44773,NA,NA,NA
-Citywide,Total Part 1 Crimes,59404,57844,44643,49685,NA,NA,NA
-Central,Total Part 1 Violent Crimes,871,801,548,543,NA,NA,NA
-Central,Total Part 1 Property Crimes,11124,10325,5535,8957,NA,NA,NA
-Central,Total Part 1 Crimes,11995,11126,6083,9500,NA,NA,NA
-Southern,Total Part 1 Violent Crimes,748,699,580,546,NA,NA,NA
-Southern,Total Part 1 Property Crimes,7319,5871,4035,4788,NA,NA,NA
-Southern,Total Part 1 Crimes,8067,6570,4615,5334,NA,NA,NA
-Bayview,Total Part 1 Violent Crimes,765,746,662,630,NA,NA,NA
-Bayview,Total Part 1 Property Crimes,3445,3492,3217,3249,NA,NA,NA
-Bayview,Total Part 1 Crimes,4210,4238,3879,3879,NA,NA,NA
-Mission,Total Part 1 Violent Crimes,1115,1078,694,775,NA,NA,NA
-Mission,Total Part 1 Property Crimes,6379,5523,4493,5007,NA,NA,NA
-Mission,Total Part 1 Crimes,7494,6601,5187,5782,NA,NA,NA
-Northern,Total Part 1 Violent Crimes,674,688,585,597,NA,NA,NA
-Northern,Total Part 1 Property Crimes,8833,9627,7413,7671,NA,NA,NA
-Northern,Total Part 1 Crimes,9507,10315,7998,8268,NA,NA,NA
-Park,Total Part 1 Violent Crimes,172,142,121,125,NA,NA,NA
-Park,Total Part 1 Property Crimes,2459,2435,2754,2541,NA,NA,NA
-Park,Total Part 1 Crimes,2631,2577,2875,2666,NA,NA,NA
-Richmond,Total Part 1 Violent Crimes,186,199,188,200,NA,NA,NA
-Richmond,Total Part 1 Property Crimes,3602,4377,3796,4133,NA,NA,NA
-Richmond,Total Part 1 Crimes,3788,4576,3984,4333,NA,NA,NA
-Ingleside,Total Part 1 Violent Crimes,632,543,511,452,NA,NA,NA
-Ingleside,Total Part 1 Property Crimes,2894,2952,3418,3177,NA,NA,NA
-Ingleside,Total Part 1 Crimes,3526,3495,3929,3629,NA,NA,NA
-Taraval,Total Part 1 Violent Crimes,321,305,212,244,NA,NA,NA
-Taraval,Total Part 1 Property Crimes,3430,3660,3192,3415,NA,NA,NA
-Taraval,Total Part 1 Crimes,3751,3965,3404,3659,NA,NA,NA
-Tenderloin,Total Part 1 Violent Crimes,946,904,752,767,NA,NA,NA
-Tenderloin,Total Part 1 Property Crimes,2969,2919,1663,1579,NA,NA,NA
-Tenderloin,Total Part 1 Crimes,3915,3823,2415,2346,NA,NA,NA
+district,category,total18,total19,total20,total21,total22,last12mos,updated
+Citywide,Total Part 1 Violent Crimes,6458,6134,4883,4967,5272,NA,NA
+Citywide,Total Part 1 Property Crimes,52946,51710,39760,45805,47973,NA,NA
+Citywide,Total Part 1 Crimes,59404,57844,44643,50772,53245,NA,NA
+Central,Total Part 1 Violent Crimes,871,801,548,550,586,NA,NA
+Central,Total Part 1 Property Crimes,11124,10325,5535,9046,9611,NA,NA
+Central,Total Part 1 Crimes,11995,11126,6083,9596,10197,NA,NA
+Southern,Total Part 1 Violent Crimes,748,699,580,550,644,NA,NA
+Southern,Total Part 1 Property Crimes,7319,5871,4035,4981,5348,NA,NA
+Southern,Total Part 1 Crimes,8067,6570,4615,5531,5992,NA,NA
+Bayview,Total Part 1 Violent Crimes,765,746,662,634,631,NA,NA
+Bayview,Total Part 1 Property Crimes,3445,3492,3217,3330,3202,NA,NA
+Bayview,Total Part 1 Crimes,4210,4238,3879,3964,3833,NA,NA
+Mission,Total Part 1 Violent Crimes,1115,1078,694,784,821,NA,NA
+Mission,Total Part 1 Property Crimes,6379,5523,4493,5092,5044,NA,NA
+Mission,Total Part 1 Crimes,7494,6601,5187,5876,5865,NA,NA
+Northern,Total Part 1 Violent Crimes,674,688,585,600,629,NA,NA
+Northern,Total Part 1 Property Crimes,8833,9627,7413,7772,7990,NA,NA
+Northern,Total Part 1 Crimes,9507,10315,7998,8372,8619,NA,NA
+Park,Total Part 1 Violent Crimes,172,142,121,128,127,NA,NA
+Park,Total Part 1 Property Crimes,2459,2435,2754,2580,2516,NA,NA
+Park,Total Part 1 Crimes,2631,2577,2875,2708,2643,NA,NA
+Richmond,Total Part 1 Violent Crimes,186,199,188,202,181,NA,NA
+Richmond,Total Part 1 Property Crimes,3602,4377,3796,4189,4168,NA,NA
+Richmond,Total Part 1 Crimes,3788,4576,3984,4391,4349,NA,NA
+Ingleside,Total Part 1 Violent Crimes,632,543,511,455,507,NA,NA
+Ingleside,Total Part 1 Property Crimes,2894,2952,3418,3237,3444,NA,NA
+Ingleside,Total Part 1 Crimes,3526,3495,3929,3692,3951,NA,NA
+Taraval,Total Part 1 Violent Crimes,321,305,212,246,254,NA,NA
+Taraval,Total Part 1 Property Crimes,3430,3660,3192,3474,4016,NA,NA
+Taraval,Total Part 1 Crimes,3751,3965,3404,3720,4270,NA,NA
+Tenderloin,Total Part 1 Violent Crimes,946,904,752,777,871,NA,NA
+Tenderloin,Total Part 1 Property Crimes,2969,2919,1663,1828,2204,NA,NA
+Tenderloin,Total Part 1 Crimes,3915,3823,2415,2605,3075,NA,NA

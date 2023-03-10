@@ -216,7 +216,7 @@ sf_population <- 815201
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Assaults<br>
 <bignumber>`r prettyNum(round(assaults_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2019 to 2021</p>
+Yearly average<br>2020 to 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Assault Rate<br>
@@ -226,7 +226,7 @@ Per 100,000 people<br>Last 12 months</p>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Assault Rate<br>
 <bignumber>`r prettyNum(round(assaults_city$rate_prior3years,0), big.mark=",")`<br></bignumber><p>
-Per 100,000 people<br>2019 to 2021</p>
+Per 100,000 people<br>2020 to 2022</p>
 </div>
 </div>
 <br>
@@ -316,6 +316,15 @@ assaults_district$total21,
 "</td>
 				<td>",
 prettyNum(round(assaults_district$rate21,0), big.mark=","),
+"</td>
+			</tr>
+									<tr>
+				<td>2022</td>
+				<td>",
+assaults_district$total22,
+"</td>
+				<td>",
+prettyNum(round(assaults_district$rate22,0), big.mark=","),
 "</td>
 			</tr>
 						<tr>

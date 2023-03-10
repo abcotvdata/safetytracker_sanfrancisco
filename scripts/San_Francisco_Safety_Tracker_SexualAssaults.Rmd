@@ -217,7 +217,7 @@ sf_population <- 815201
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Sexual Assaults<br>
 <bignumber>`r prettyNum(round(sexassaults_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2019 to 2021</p>
+Yearly average<br>2020 to 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Sexual Assault Rate<br>
@@ -227,7 +227,7 @@ Per 100,000 people<br>Last 12 months</p>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Sexual Assault Rate<br>
 <bignumber>`r sexassaults_city$rate_prior3years`<br></bignumber><p>
-Per 100,000 people<br>2019 to 2021</p>
+Per 100,000 people<br>2020 to 2022</p>
 </div>
 </div>
 <br>
@@ -315,6 +315,15 @@ sexassaults_district$total21,
 "</td>
 				<td>",
 sexassaults_district$rate21,
+"</td>
+			</tr>
+									<tr>
+				<td>2022</td>
+				<td>",
+sexassaults_district$total22,
+"</td>
+				<td>",
+sexassaults_district$rate22,
 "</td>
 			</tr>
 						<tr>

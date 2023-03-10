@@ -1880,15 +1880,17 @@ sf_crime <- as.data.frame(sf_scraped_list)
 sf_crime <- t(sf_crime)
 sf_crime <- data.frame(sf_crime)
 rownames(sf_crime)<-NULL
-names(sf_crime) <- c("district","category","ytd2022","ytd2021")
+
+
+names(sf_crime) <- c("district","category","ytd2023","ytd2022")
 
 sf_crime <- sf_crime %>% filter(category!="Crime" & !is.na(category))
 
-sf_crime$ytd2021 <- gsub(",","",sf_crime$ytd2021)
 sf_crime$ytd2022 <- gsub(",","",sf_crime$ytd2022)
+sf_crime$ytd2023 <- gsub(",","",sf_crime$ytd2023)
 
-sf_crime$ytd2021 <- as.numeric(sf_crime$ytd2021)
 sf_crime$ytd2022 <- as.numeric(sf_crime$ytd2022)
+sf_crime$ytd2023 <- as.numeric(sf_crime$ytd2023)
 
 sf_crime$category <- gsub("THEFT"," THEFT",sf_crime$category)
 sf_crime$category <- gsub("VEHICLE"," VEHICLE",sf_crime$category)
@@ -1898,8 +1900,8 @@ sf_crime$category <- gsub("TRAFFICKING-","TRAFFICKING -",sf_crime$category)
 #sf_crime <- sf_crime %>% mutate_all(na_if,"")
 #sf_crime <- sf_crime %>% filter(!(is.na(sf_crime$ytd2022) & is.na(sf_crime$ytd2021)))
 
-sf_crime <- sf_crime %>% filter(!(is.na(sf_crime$ytd2022) & is.na(sf_crime$ytd2021)))
-sf_crime$ytd2021 <- ifelse(is.na(sf_crime$ytd2021),0,sf_crime$ytd2021)
+sf_crime <- sf_crime %>% filter(!(is.na(sf_crime$ytd2023) & is.na(sf_crime$ytd2022)))
+sf_crime$ytd2023 <- ifelse(is.na(sf_crime$ytd2023),0,sf_crime$ytd2023)
 sf_crime$ytd2022 <- ifelse(is.na(sf_crime$ytd2022),0,sf_crime$ytd2022)
 
 # we need these unique lists for making the beat tables below

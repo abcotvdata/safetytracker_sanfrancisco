@@ -24,16 +24,18 @@ sf_crime_ytd <- readRDS("scripts/rds/sf_crime_ytd.rds")
 
 # Combined the annual files and order columns for building tracker table
 sf_crime <- cbind(sf_crime_2019,sf_crime_2020,sf_crime_2021,sf_crime_2022)
-sf_crime <- sf_crime %>% select(4,1,2,6,10,11,15,14,17)
-names(sf_crime) <- c("district","category","total18","total19","total20","total21","ytd22_pdf","ytd21_pdf","update_pdf")
+
+sf_crime <- sf_crime %>% select(4,1,2,6,10,14,15,17)
+
+# names(sf_crime) <- c("district","category","total18","total19","total20","total21","ytd22_pdf","ytd21_pdf","update_pdf")
+names(sf_crime) <- c("district","category","total18","total19","total20","total21","total22","update_pdf")
 sf_crime$category <- sub("\\*", "", sf_crime$category)
-
-
 
 # get both crime category names consistent
 sf_crime$category <- str_to_title(sf_crime$category)
 sf_crime_ytd$category <- str_to_title(sf_crime_ytd$category)
 sf_crime_last12mos_add$category <- str_to_title(sf_crime_last12mos_add$category)
+
 # adapt crime categories to match
 sf_crime$category <- case_when(sf_crime$category == "Auto Theft" ~ "Motor Vehicle Theft",
                                sf_crime$category == "Human Trafficking-Involuntary Serv." ~ "Human Trafficking - Inv Serv",
@@ -48,8 +50,8 @@ sf_crime <- left_join(sf_crime,sf_crime_ytd,by=c("district"="district","category
 sf_crime <- left_join(sf_crime,sf_crime_last12mos_add,by=c("district"="district","category"="category"))
 
 # process last 12 mos calculations to do comparable annualized rates and clean up unneeded columns
-sf_crime$last12mos <- sf_crime$ytd2022+sf_crime$last12mos_add
-sf_crime <- sf_crime %>% select(1:6,10,12,15)
+sf_crime$last12mos <- sf_crime$ytd2023+sf_crime$last12mos_add
+sf_crime <- sf_crime %>% select(1:7,14,11)
 
 # pull out published totals just for reference
 sf_crime_totals <- sf_crime %>% filter(category=="Total Part 1 Violent Crimes" | category=="Total Part 1 Property Crimes" | category=="Total Part 1 Crimes")
@@ -74,21 +76,21 @@ district_crime[is.na(district_crime)] <- 0
 
 
 # add 3-year totals and annualized averages
-district_crime$total_prior3years <- district_crime$total19+
-  district_crime$total20+
-  district_crime$total21
-district_crime$avg_prior3years <- round(((district_crime$total19+
-                                            district_crime$total20+
-                                            district_crime$total21)/3),1)
+district_crime$total_prior3years <- district_crime$total20+
+  district_crime$total21+
+  district_crime$total22
+district_crime$avg_prior3years <- round((district_crime$total_prior3years/3),1)
+
 # now add the increases or change percentages
-district_crime$inc_19to21 <- round(district_crime$total21/district_crime$total19*100-100,1)
+district_crime$inc_19to22 <- round(district_crime$total22/district_crime$total19*100-100,1)
 district_crime$inc_19tolast12 <- round(district_crime$last12mos/district_crime$total19*100-100,1)
-district_crime$inc_21tolast12 <- round(district_crime$last12mos/district_crime$total21*100-100,1)
+district_crime$inc_22tolast12 <- round(district_crime$last12mos/district_crime$total22*100-100,1)
 district_crime$inc_prior3yearavgtolast12 <- round((district_crime$last12mos/district_crime$avg_prior3years)*100-100,0)
 # add crime rates for each year
 district_crime$rate19 <- round((district_crime$total19/district_crime$population)*100000,1)
 district_crime$rate20 <- round((district_crime$total20/district_crime$population)*100000,1)
 district_crime$rate21 <- round((district_crime$total21/district_crime$population)*100000,1)
+district_crime$rate22 <- round((district_crime$total22/district_crime$population)*100000,1)
 district_crime$rate_last12 <- round((district_crime$last12mos/district_crime$population)*100000,1)
 district_crime$rate_prior3years <- 
   round((district_crime$avg_prior3years/district_crime$population)*100000,1)
@@ -114,21 +116,21 @@ citywide_crime$updated[is.na(citywide_crime$updated)] <- asofdate
 # add zeros where there were no crimes tallied that year
 citywide_crime[is.na(citywide_crime)] <- 0
 # add 3-year annualized averages
-citywide_crime$total_prior3years <- citywide_crime$total19+
-  citywide_crime$total20+
-  citywide_crime$total21
-citywide_crime$avg_prior3years <- round(((citywide_crime$total19+
-                                            citywide_crime$total20+
-                                            citywide_crime$total21)/3),1)
+citywide_crime$total_prior3years <- citywide_crime$total20+
+  citywide_crime$total21+
+  citywide_crime$total22
+citywide_crime$avg_prior3years <- round((citywide_crime$total_prior3years/3),1)
+
 # now add the increases or change percentages
-citywide_crime$inc_19to21 <- round(citywide_crime$total21/citywide_crime$total19*100-100,1)
+citywide_crime$inc_19to22 <- round(citywide_crime$total22/citywide_crime$total19*100-100,1)
 citywide_crime$inc_19tolast12 <- round(citywide_crime$last12mos/citywide_crime$total19*100-100,1)
-citywide_crime$inc_21tolast12 <- round(citywide_crime$last12mos/citywide_crime$total21*100-100,1)
+citywide_crime$inc_22tolast12 <- round(citywide_crime$last12mos/citywide_crime$total22*100-100,1)
 citywide_crime$inc_prior3yearavgtolast12 <- round((citywide_crime$last12mos/citywide_crime$avg_prior3years)*100-100,0)
 # add crime rates for each year
 citywide_crime$rate19 <- round((citywide_crime$total19/sf_population)*100000,1)
 citywide_crime$rate20 <- round((citywide_crime$total20/sf_population)*100000,1)
 citywide_crime$rate21 <- round((citywide_crime$total21/sf_population)*100000,1)
+citywide_crime$rate22 <- round((citywide_crime$total22/sf_population)*100000,1)
 citywide_crime$rate_last12 <- round((citywide_crime$last12mos/sf_population)*100000,1)
 # 3 yr rate
 citywide_crime$rate_prior3years <- 
@@ -140,10 +142,10 @@ district_crime <- district_crime %>%
   mutate_if(is.numeric, ~ifelse(. == "NaN", NA, .))
 
 # create a quick long-term annual table
-citywide_yearly <- citywide_crime %>% select(2:6,9)
+citywide_yearly <- citywide_crime %>% select(2:8)
 # add additional years from state archive of reported ucr crimes back to 2000
 yearly_archive <- read_csv("data/source/annual/sf_annual_state.csv")
-citywide_yearly <- right_join(citywide_yearly,yearly_archive %>% select(1:18,23),by="category") %>% select(1,7:24,2:6)
+citywide_yearly <- right_join(citywide_yearly,yearly_archive %>% select(1:18,23),by="category") %>% select(1,8:25,2:7)
 # save for annual charts  
 write_csv(citywide_yearly,"data/output/yearly/citywide_yearly.csv")
 
@@ -181,8 +183,8 @@ ca_deaths %>% select(1,4) %>% write_csv("data/source/health/ca_death_rates.csv")
 write_csv(district_crime,"data/output/weekly/district_crime.csv")
 write_csv(citywide_crime,"data/output/weekly/citywide_crime.csv")
 # Archive a year's worth of week-numbered files from the weekly updates
-write_csv(district_crime,paste0("data/output/archive/district_crime_week",sf_tableau_update,".csv"))
-write_csv(citywide_crime,paste0("data/output/archive/citywide_crime_week",sf_tableau_update,".csv"))
+#write_csv(district_crime,paste0("data/output/archive/district_crime_week",sf_tableau_update,".csv"))
+#write_csv(citywide_crime,paste0("data/output/archive/citywide_crime_week",sf_tableau_update,".csv"))
 # Now save the files needed for trackers into RDS store in scripts for GH Actions
 # precinct versions
 saveRDS(district_crime,"scripts/rds/district_crime.rds")
