@@ -215,8 +215,8 @@ You can choose which crime to explore: <select onchange="window.location=this.va
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicides<br>
-<bignumber>`r prettyNum(round(murders_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2020 to 2022</p>
+<bignumber>`r prettyNum(round(murders_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
+Yearly average<br>2019 to 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Homicide Rate<br>
@@ -225,16 +225,16 @@ Per 100,000 people<br>Last 12 months</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicide Rate<br>
-<bignumber>`r murders_city$rate_prior3years`<br></bignumber><p>
-Per 100,000 people<br>2020 to 2022</p>
+<bignumber>`r murders_city$rate_prior4years`<br></bignumber><p>
+Per 100,000 people<br>2019 to 2022</p>
 </div>
 </div>
 <br>
-Homicides over the last 12 months are trending <h8>`r case_when(murders_city$inc_21tolast12 >= .25 ~ " up", murders_city$inc_21tolast12<=-.25 ~ " down", TRUE ~ " about the same")`</h8> when compared to 2021, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
+Homicides over the last 12 months are trending <h8>`r case_when(murders_city$inc_22tolast12 >= .25 ~ " up", murders_city$inc_22tolast12<=-.25 ~ " down", TRUE ~ " about the same")`</h8> when compared to 2021, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
 
-The murder rate over the last 12 months is <h8>`r case_when((murders_city$rate_last12-murders_city$rate_prior3years)>=0.25 ~ "up",
-          (murders_city$rate_last12-murders_city$rate_prior3years)<=-0.25 ~ "down",
-          TRUE ~ "about the same ")`</h8> compared to the annual average over the last three years, and the frequency of killings remains higher than it was before the pandemic.
+The murder rate over the last 12 months is <h8>`r case_when((murders_city$rate_last12-murders_city$rate_prior4years)>=0.25 ~ "up",
+          (murders_city$rate_last12-murders_city$rate_prior4years)<=-0.25 ~ "down",
+          TRUE ~ "about the same ")`</h8> compared to the annual average over the last four years, and the frequency of killings remains higher than it was before the pandemic.
 
 The city averaged about <h8>`r round(murders_city$last12mos/12,0)`</h8> homicides a month over the last 12 months. In 2019, that number was about <h8>`r round(murders_city$total19/12,0)`</h8> a month.
 
@@ -351,12 +351,12 @@ murders_district$rate_last12,
 "</td>
 			</tr>
 						<tr>
-				<td>3-year Average</td>
+				<td>4-year Average</td>
 				<td>",
-murders_district$avg_prior3years,
+murders_district$avg_prior4years,
 "</td>
 				<td>",
-murders_district$rate_prior3years,
+murders_district$rate_prior4years,
 "</td>
 			</tr>
 </table>")

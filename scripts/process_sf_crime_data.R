@@ -75,25 +75,25 @@ district_crime$updated[is.na(district_crime$updated)] <- asofdate
 district_crime[is.na(district_crime)] <- 0
 
 
-# add 3-year totals and annualized averages
-district_crime$total_prior3years <- district_crime$total20+
+# add 4-year totals and annualized averages
+district_crime$total_prior4years <- district_crime$total19+district_crime$total20+
   district_crime$total21+
   district_crime$total22
-district_crime$avg_prior3years <- round((district_crime$total_prior3years/3),1)
+district_crime$avg_prior4years <- round((district_crime$total_prior4years/4),1)
 
 # now add the increases or change percentages
 district_crime$inc_19to22 <- round(district_crime$total22/district_crime$total19*100-100,1)
 district_crime$inc_19tolast12 <- round(district_crime$last12mos/district_crime$total19*100-100,1)
 district_crime$inc_22tolast12 <- round(district_crime$last12mos/district_crime$total22*100-100,1)
-district_crime$inc_prior3yearavgtolast12 <- round((district_crime$last12mos/district_crime$avg_prior3years)*100-100,0)
+district_crime$inc_prior4yearavgtolast12 <- round((district_crime$last12mos/district_crime$avg_prior4years)*100-100,0)
 # add crime rates for each year
 district_crime$rate19 <- round((district_crime$total19/district_crime$population)*100000,1)
 district_crime$rate20 <- round((district_crime$total20/district_crime$population)*100000,1)
 district_crime$rate21 <- round((district_crime$total21/district_crime$population)*100000,1)
 district_crime$rate22 <- round((district_crime$total22/district_crime$population)*100000,1)
 district_crime$rate_last12 <- round((district_crime$last12mos/district_crime$population)*100000,1)
-district_crime$rate_prior3years <- 
-  round((district_crime$avg_prior3years/district_crime$population)*100000,1)
+district_crime$rate_prior4years <- 
+  round((district_crime$avg_prior4years/district_crime$population)*100000,1)
 
 # Now reduce the precinct down to just the columns we likely need for the tracker pages
 # district_crime <- district_crime %>% select(1,4,5,6,26:28,36:40,44:55,29,42)
@@ -115,26 +115,26 @@ sf_population <- 815201
 citywide_crime$updated[is.na(citywide_crime$updated)] <- asofdate
 # add zeros where there were no crimes tallied that year
 citywide_crime[is.na(citywide_crime)] <- 0
-# add 3-year annualized averages
-citywide_crime$total_prior3years <- citywide_crime$total20+
+# add 4-year annualized averages
+citywide_crime$total_prior4years <- citywide_crime$total19+citywide_crime$total20+
   citywide_crime$total21+
   citywide_crime$total22
-citywide_crime$avg_prior3years <- round((citywide_crime$total_prior3years/3),1)
+citywide_crime$avg_prior4years <- round((citywide_crime$total_prior4years/4),1)
 
 # now add the increases or change percentages
 citywide_crime$inc_19to22 <- round(citywide_crime$total22/citywide_crime$total19*100-100,1)
 citywide_crime$inc_19tolast12 <- round(citywide_crime$last12mos/citywide_crime$total19*100-100,1)
 citywide_crime$inc_22tolast12 <- round(citywide_crime$last12mos/citywide_crime$total22*100-100,1)
-citywide_crime$inc_prior3yearavgtolast12 <- round((citywide_crime$last12mos/citywide_crime$avg_prior3years)*100-100,0)
+citywide_crime$inc_prior4yearavgtolast12 <- round((citywide_crime$last12mos/citywide_crime$avg_prior4years)*100-100,0)
 # add crime rates for each year
 citywide_crime$rate19 <- round((citywide_crime$total19/sf_population)*100000,1)
 citywide_crime$rate20 <- round((citywide_crime$total20/sf_population)*100000,1)
 citywide_crime$rate21 <- round((citywide_crime$total21/sf_population)*100000,1)
 citywide_crime$rate22 <- round((citywide_crime$total22/sf_population)*100000,1)
 citywide_crime$rate_last12 <- round((citywide_crime$last12mos/sf_population)*100000,1)
-# 3 yr rate
-citywide_crime$rate_prior3years <- 
-  round((citywide_crime$avg_prior3years/sf_population)*100000,1)
+# 4 yr rate
+citywide_crime$rate_prior4years <- 
+  round((citywide_crime$avg_prior4years/sf_population)*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 district_crime <- district_crime %>%
   mutate_if(is.numeric, ~ifelse(. == Inf, NA, .))
