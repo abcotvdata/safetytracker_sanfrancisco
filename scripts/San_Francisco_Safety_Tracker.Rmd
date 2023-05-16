@@ -230,11 +230,11 @@ Per 100,000 people<br>2019 to 2022</p>
 </div>
 </div>
 <br>
-Homicides over the last 12 months are trending <h8>`r case_when(murders_city$inc_22tolast12 >= .25 ~ " up", murders_city$inc_22tolast12<=-.25 ~ " down", TRUE ~ " about the same")`</h8> when compared to 2021, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
+Homicides over the last 12 months are trending <h8>`r case_when(murders_city$inc_22tolast12 >= .25 ~ " up", murders_city$inc_22tolast12<=-.25 ~ " down", TRUE ~ " about the same")` `r ifelse(murders_city$inc_22tolast12>=0,murders_city$inc_22tolast12,substring(murders_city$murders_city$inc_22tolast12,2))`%</h8> when compared to last year, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
 
 The murder rate over the last 12 months is <h8>`r case_when((murders_city$rate_last12-murders_city$rate_prior4years)>=0.25 ~ "up",
           (murders_city$rate_last12-murders_city$rate_prior4years)<=-0.25 ~ "down",
-          TRUE ~ "about the same ")`</h8> compared to the annual average over the last four years, and the frequency of killings remains higher than it was before the pandemic.
+          TRUE ~ "about the same ")` `r ifelse(murders_city$inc_prior4yearavgtolast12>=0,murders_city$inc_prior4yearavgtolast12,substring(murders_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years.
 
 The city averaged about <h8>`r round(murders_city$last12mos/12,0)`</h8> homicides a month over the last 12 months. In 2019, that number was about <h8>`r round(murders_city$total19/12,0)`</h8> a month.
 
