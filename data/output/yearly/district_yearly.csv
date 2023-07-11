@@ -1,101 +1,101 @@
 district,category,total18,total19,total20,total21,updated
-Southern,Homicide,2,1,3,6,2023-07-02
-Southern,Rape,72,58,36,32,2023-07-02
-Southern,Robbery,320,350,258,227,2023-07-02
-Southern,Aggravated Assault,322,287,280,281,2023-07-02
-Southern,Human Trafficking - Sex Act,32,3,3,4,2023-07-02
-Southern,Human Trafficking - Inv Serv,0,0,0,0,2023-07-02
-Southern,Burglary,861,677,939,880,2023-07-02
-Southern,Larceny Theft,5903,4702,2564,3484,2023-07-02
-Southern,Motor Vehicle Theft,520,463,486,563,2023-07-02
-Southern,Arson,35,29,46,54,2023-07-02
-Bayview,Homicide,10,13,14,15,2023-07-02
-Bayview,Rape,26,31,18,23,2023-07-02
-Bayview,Robbery,339,347,262,221,2023-07-02
-Bayview,Aggravated Assault,389,353,368,372,2023-07-02
-Bayview,Human Trafficking - Sex Act,1,2,0,2,2023-07-02
-Bayview,Human Trafficking - Inv Serv,0,0,0,1,2023-07-02
-Bayview,Burglary,499,438,452,542,2023-07-02
-Bayview,Larceny Theft,2226,2269,1749,1686,2023-07-02
-Bayview,Motor Vehicle Theft,671,731,958,1026,2023-07-02
-Bayview,Arson,49,54,58,76,2023-07-02
-Mission,Homicide,10,5,5,9,2023-07-02
-Mission,Rape,118,93,25,34,2023-07-02
-Mission,Robbery,470,491,346,357,2023-07-02
-Mission,Aggravated Assault,502,467,309,381,2023-07-02
-Mission,Human Trafficking - Sex Act,15,22,9,3,2023-07-02
-Mission,Human Trafficking - Inv Serv,0,0,0,0,2023-07-02
-Mission,Burglary,589,485,881,974,2023-07-02
-Mission,Larceny Theft,5079,4438,2772,3145,2023-07-02
-Mission,Motor Vehicle Theft,669,561,772,904,2023-07-02
-Mission,Arson,42,39,68,69,2023-07-02
-Northern,Homicide,1,5,1,6,2023-07-02
-Northern,Rape,44,43,32,25,2023-07-02
-Northern,Robbery,368,375,335,316,2023-07-02
-Northern,Aggravated Assault,258,265,216,249,2023-07-02
-Northern,Human Trafficking - Sex Act,3,0,1,4,2023-07-02
-Northern,Human Trafficking - Inv Serv,0,0,0,0,2023-07-02
-Northern,Burglary,819,882,1539,1336,2023-07-02
-Northern,Larceny Theft,7494,8194,5077,5717,2023-07-02
-Northern,Motor Vehicle Theft,495,511,737,674,2023-07-02
-Northern,Arson,25,40,60,45,2023-07-02
-Tenderloin,Homicide,9,11,10,11,2023-07-02
-Tenderloin,Rape,40,35,22,30,2023-07-02
-Tenderloin,Robbery,508,442,341,297,2023-07-02
-Tenderloin,Aggravated Assault,386,413,376,434,2023-07-02
-Tenderloin,Human Trafficking - Sex Act,3,3,3,5,2023-07-02
-Tenderloin,Human Trafficking - Inv Serv,0,0,0,0,2023-07-02
-Tenderloin,Burglary,245,206,322,304,2023-07-02
-Tenderloin,Larceny Theft,2563,2529,1084,1251,2023-07-02
-Tenderloin,Motor Vehicle Theft,133,160,234,247,2023-07-02
-Tenderloin,Arson,28,24,23,26,2023-07-02
-Central,Homicide,3,2,5,1,2023-07-02
-Central,Rape,44,31,22,19,2023-07-02
-Central,Robbery,568,502,348,318,2023-07-02
-Central,Aggravated Assault,234,255,168,210,2023-07-02
-Central,Human Trafficking - Sex Act,22,11,5,2,2023-07-02
-Central,Human Trafficking - Inv Serv,0,0,0,0,2023-07-02
-Central,Burglary,979,887,1107,876,2023-07-02
-Central,Larceny Theft,9695,8931,3948,7675,2023-07-02
-Central,Motor Vehicle Theft,418,464,423,461,2023-07-02
-Central,Arson,32,43,57,34,2023-07-02
-Park,Homicide,1,0,0,4,2023-07-02
-Park,Rape,15,9,7,9,2023-07-02
-Park,Robbery,70,59,47,50,2023-07-02
-Park,Aggravated Assault,85,73,67,64,2023-07-02
-Park,Human Trafficking - Sex Act,1,1,0,1,2023-07-02
-Park,Human Trafficking - Inv Serv,0,0,0,0,2023-07-02
-Park,Burglary,324,280,618,493,2023-07-02
-Park,Larceny Theft,1868,1885,1769,1779,2023-07-02
-Park,Motor Vehicle Theft,259,258,358,297,2023-07-02
-Park,Arson,8,12,9,11,2023-07-02
-Richmond,Homicide,1,0,1,1,2023-07-02
-Richmond,Rape,12,18,13,9,2023-07-02
-Richmond,Robbery,97,98,102,113,2023-07-02
-Richmond,Aggravated Assault,76,83,71,79,2023-07-02
-Richmond,Human Trafficking - Sex Act,0,0,1,0,2023-07-02
-Richmond,Human Trafficking - Inv Serv,0,0,0,0,2023-07-02
-Richmond,Burglary,285,340,635,635,2023-07-02
-Richmond,Larceny Theft,3040,3698,2634,3145,2023-07-02
-Richmond,Motor Vehicle Theft,256,331,491,385,2023-07-02
-Richmond,Arson,21,8,36,24,2023-07-02
-Ingleside,Homicide,5,2,8,3,2023-07-02
-Ingleside,Rape,37,30,20,16,2023-07-02
-Ingleside,Robbery,333,290,258,225,2023-07-02
-Ingleside,Aggravated Assault,255,219,225,209,2023-07-02
-Ingleside,Human Trafficking - Sex Act,2,2,0,1,2023-07-02
-Ingleside,Human Trafficking - Inv Serv,0,0,0,1,2023-07-02
-Ingleside,Burglary,573,418,589,663,2023-07-02
-Ingleside,Larceny Theft,1767,2026,1870,1668,2023-07-02
-Ingleside,Motor Vehicle Theft,522,490,934,880,2023-07-02
-Ingleside,Arson,32,18,25,26,2023-07-02
-Taraval,Homicide,4,2,1,0,2023-07-02
-Taraval,Rape,19,32,9,13,2023-07-02
-Taraval,Robbery,147,143,102,125,2023-07-02
-Taraval,Aggravated Assault,130,125,100,105,2023-07-02
-Taraval,Human Trafficking - Sex Act,21,3,0,3,2023-07-02
-Taraval,Human Trafficking - Inv Serv,0,0,0,0,2023-07-02
-Taraval,Burglary,507,345,481,627,2023-07-02
-Taraval,Larceny Theft,2502,2842,2014,2210,2023-07-02
-Taraval,Motor Vehicle Theft,405,455,668,614,2023-07-02
-Taraval,Arson,16,18,29,23,2023-07-02
+Southern,Homicide,2,1,3,6,2023-07-09
+Southern,Rape,72,58,36,32,2023-07-09
+Southern,Robbery,320,350,258,227,2023-07-09
+Southern,Aggravated Assault,322,287,280,281,2023-07-09
+Southern,Human Trafficking - Sex Act,32,3,3,4,2023-07-09
+Southern,Human Trafficking - Inv Serv,0,0,0,0,2023-07-09
+Southern,Burglary,861,677,939,880,2023-07-09
+Southern,Larceny Theft,5903,4702,2564,3484,2023-07-09
+Southern,Motor Vehicle Theft,520,463,486,563,2023-07-09
+Southern,Arson,35,29,46,54,2023-07-09
+Bayview,Homicide,10,13,14,15,2023-07-09
+Bayview,Rape,26,31,18,23,2023-07-09
+Bayview,Robbery,339,347,262,221,2023-07-09
+Bayview,Aggravated Assault,389,353,368,372,2023-07-09
+Bayview,Human Trafficking - Sex Act,1,2,0,2,2023-07-09
+Bayview,Human Trafficking - Inv Serv,0,0,0,1,2023-07-09
+Bayview,Burglary,499,438,452,542,2023-07-09
+Bayview,Larceny Theft,2226,2269,1749,1686,2023-07-09
+Bayview,Motor Vehicle Theft,671,731,958,1026,2023-07-09
+Bayview,Arson,49,54,58,76,2023-07-09
+Mission,Homicide,10,5,5,9,2023-07-09
+Mission,Rape,118,93,25,34,2023-07-09
+Mission,Robbery,470,491,346,357,2023-07-09
+Mission,Aggravated Assault,502,467,309,381,2023-07-09
+Mission,Human Trafficking - Sex Act,15,22,9,3,2023-07-09
+Mission,Human Trafficking - Inv Serv,0,0,0,0,2023-07-09
+Mission,Burglary,589,485,881,974,2023-07-09
+Mission,Larceny Theft,5079,4438,2772,3145,2023-07-09
+Mission,Motor Vehicle Theft,669,561,772,904,2023-07-09
+Mission,Arson,42,39,68,69,2023-07-09
+Northern,Homicide,1,5,1,6,2023-07-09
+Northern,Rape,44,43,32,25,2023-07-09
+Northern,Robbery,368,375,335,316,2023-07-09
+Northern,Aggravated Assault,258,265,216,249,2023-07-09
+Northern,Human Trafficking - Sex Act,3,0,1,4,2023-07-09
+Northern,Human Trafficking - Inv Serv,0,0,0,0,2023-07-09
+Northern,Burglary,819,882,1539,1336,2023-07-09
+Northern,Larceny Theft,7494,8194,5077,5717,2023-07-09
+Northern,Motor Vehicle Theft,495,511,737,674,2023-07-09
+Northern,Arson,25,40,60,45,2023-07-09
+Tenderloin,Homicide,9,11,10,11,2023-07-09
+Tenderloin,Rape,40,35,22,30,2023-07-09
+Tenderloin,Robbery,508,442,341,297,2023-07-09
+Tenderloin,Aggravated Assault,386,413,376,434,2023-07-09
+Tenderloin,Human Trafficking - Sex Act,3,3,3,5,2023-07-09
+Tenderloin,Human Trafficking - Inv Serv,0,0,0,0,2023-07-09
+Tenderloin,Burglary,245,206,322,304,2023-07-09
+Tenderloin,Larceny Theft,2563,2529,1084,1251,2023-07-09
+Tenderloin,Motor Vehicle Theft,133,160,234,247,2023-07-09
+Tenderloin,Arson,28,24,23,26,2023-07-09
+Central,Homicide,3,2,5,1,2023-07-09
+Central,Rape,44,31,22,19,2023-07-09
+Central,Robbery,568,502,348,318,2023-07-09
+Central,Aggravated Assault,234,255,168,210,2023-07-09
+Central,Human Trafficking - Sex Act,22,11,5,2,2023-07-09
+Central,Human Trafficking - Inv Serv,0,0,0,0,2023-07-09
+Central,Burglary,979,887,1107,876,2023-07-09
+Central,Larceny Theft,9695,8931,3948,7675,2023-07-09
+Central,Motor Vehicle Theft,418,464,423,461,2023-07-09
+Central,Arson,32,43,57,34,2023-07-09
+Park,Homicide,1,0,0,4,2023-07-09
+Park,Rape,15,9,7,9,2023-07-09
+Park,Robbery,70,59,47,50,2023-07-09
+Park,Aggravated Assault,85,73,67,64,2023-07-09
+Park,Human Trafficking - Sex Act,1,1,0,1,2023-07-09
+Park,Human Trafficking - Inv Serv,0,0,0,0,2023-07-09
+Park,Burglary,324,280,618,493,2023-07-09
+Park,Larceny Theft,1868,1885,1769,1779,2023-07-09
+Park,Motor Vehicle Theft,259,258,358,297,2023-07-09
+Park,Arson,8,12,9,11,2023-07-09
+Richmond,Homicide,1,0,1,1,2023-07-09
+Richmond,Rape,12,18,13,9,2023-07-09
+Richmond,Robbery,97,98,102,113,2023-07-09
+Richmond,Aggravated Assault,76,83,71,79,2023-07-09
+Richmond,Human Trafficking - Sex Act,0,0,1,0,2023-07-09
+Richmond,Human Trafficking - Inv Serv,0,0,0,0,2023-07-09
+Richmond,Burglary,285,340,635,635,2023-07-09
+Richmond,Larceny Theft,3040,3698,2634,3145,2023-07-09
+Richmond,Motor Vehicle Theft,256,331,491,385,2023-07-09
+Richmond,Arson,21,8,36,24,2023-07-09
+Ingleside,Homicide,5,2,8,3,2023-07-09
+Ingleside,Rape,37,30,20,16,2023-07-09
+Ingleside,Robbery,333,290,258,225,2023-07-09
+Ingleside,Aggravated Assault,255,219,225,209,2023-07-09
+Ingleside,Human Trafficking - Sex Act,2,2,0,1,2023-07-09
+Ingleside,Human Trafficking - Inv Serv,0,0,0,1,2023-07-09
+Ingleside,Burglary,573,418,589,663,2023-07-09
+Ingleside,Larceny Theft,1767,2026,1870,1668,2023-07-09
+Ingleside,Motor Vehicle Theft,522,490,934,880,2023-07-09
+Ingleside,Arson,32,18,25,26,2023-07-09
+Taraval,Homicide,4,2,1,0,2023-07-09
+Taraval,Rape,19,32,9,13,2023-07-09
+Taraval,Robbery,147,143,102,125,2023-07-09
+Taraval,Aggravated Assault,130,125,100,105,2023-07-09
+Taraval,Human Trafficking - Sex Act,21,3,0,3,2023-07-09
+Taraval,Human Trafficking - Inv Serv,0,0,0,0,2023-07-09
+Taraval,Burglary,507,345,481,627,2023-07-09
+Taraval,Larceny Theft,2502,2842,2014,2210,2023-07-09
+Taraval,Motor Vehicle Theft,405,455,668,614,2023-07-09
+Taraval,Arson,16,18,29,23,2023-07-09
