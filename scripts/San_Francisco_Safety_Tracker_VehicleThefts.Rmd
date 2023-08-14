@@ -241,7 +241,7 @@ The risk is not the same neighborhood to neighborhood. ABC7's data team looked a
 
 The map color codes each neighborhood by the vehicle theft rate over the last 12 months. The three darker blues represent neighborhoods with vehicle theft rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of vehicles stolen.
 
-Click on any neighborhood on the map to see detailed numbers, rates and trends. You can also search for a street name, place, landmark or zip code.
+Click on any neighborhood on the map to see detailed numbers, rates and trends. You can also search for a street name, place, or local landmark.
 <br>
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # autotheft MAP
@@ -373,7 +373,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               group="Number") %>% 
     addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
     onRender("function(el, x) {
-        $('input.search-input')[0].placeholder = 'Search street, place or zip code'
+        $('input.search-input')[0].placeholder = 'Search street, place or landmark'
         }") %>%
   addLegend(opacity = 0.6,
             values = autothefts_district$rate_last12, 
