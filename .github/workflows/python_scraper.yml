@@ -11,7 +11,7 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -28,4 +28,5 @@ jobs:
       run: |
         git add -A
         git commit -m 'New SF crime data collected' || echo "No changes"
-        git push origin || echo "No changes to commit"
+        git status  # Add this line for debugging
+        git push
