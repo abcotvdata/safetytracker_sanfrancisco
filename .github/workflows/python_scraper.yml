@@ -29,4 +29,4 @@ jobs:
         git add -A
         git commit -m 'New SF crime data collected' || echo "No changes"
         git status  # Add this line for debugging
-        git push
+        git push origin || echo "No changes to commit"
