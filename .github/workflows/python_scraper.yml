@@ -1,0 +1,31 @@
+name: Python Runner
+
+on:
+  schedule:
+    - cron: '0 23 * * 1'
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        pip install jupyter
+        pip install pandas
+        pip install TableauScraper
+    - name: Run notebook
+      run: |
+        jupyter nbconvert --to notebook --execute sf_crime_scraper.ipynb
+    - name: Commit changes
+      run: |
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git add sf_crime_scraper.ipynb
+        git commit -m "Update sf_crime_scraper.ipynb"
+        git push
