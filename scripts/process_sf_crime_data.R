@@ -18,9 +18,12 @@ sf_crime_2021 <- readRDS("scripts/rds/sf_crime_2021.rds")
 sf_crime_2022 <- readRDS("scripts/rds/sf_crime_2022.rds")
 # San Francisco police districts geo file with populations
 districts_geo <- readRDS("scripts/rds/sfpd_districts.rds")
-# recent crime files scraped from SFPD's Tableau site
-sf_crime_last12mos_add <- readRDS("scripts/rds/sf_crime_last12mos_add.rds")
-sf_crime_ytd <- readRDS("scripts/rds/sf_crime_ytd.rds")
+# recent crime files scraped from SFPD's Tableau site with Pyton sf_crime_scraper.ipynb
+sf_crime_ytd <- read_csv("data/source/recent/sfcrime_ytd.csv", 
+                         col_types = cols(asofdate = col_date(format = "%m/%d/%Y")))
+
+#sf_crime_last12mos_add <- readRDS("scripts/rds/sf_crime_last12mos_add.rds")
+#sf_crime_ytd <- readRDS("scripts/rds/sf_crime_ytd.rds")
 
 # Combined the annual files and order columns for building tracker table
 sf_crime <- cbind(sf_crime_2019,sf_crime_2020,sf_crime_2021,sf_crime_2022)
@@ -34,7 +37,7 @@ sf_crime$category <- sub("\\*", "", sf_crime$category)
 # get both crime category names consistent
 sf_crime$category <- str_to_title(sf_crime$category)
 sf_crime_ytd$category <- str_to_title(sf_crime_ytd$category)
-sf_crime_last12mos_add$category <- str_to_title(sf_crime_last12mos_add$category)
+# sf_crime_last12mos_add$category <- str_to_title(sf_crime_last12mos_add$category)
 
 # adapt crime categories to match
 sf_crime$category <- case_when(sf_crime$category == "Auto Theft" ~ "Motor Vehicle Theft",
@@ -43,15 +46,16 @@ sf_crime$category <- case_when(sf_crime$category == "Auto Theft" ~ "Motor Vehicl
                                TRUE ~ sf_crime$category)
 sf_crime_ytd$category <- case_when(sf_crime_ytd$category == "Assault" ~ "Aggravated Assault",
                                    TRUE ~ sf_crime_ytd$category)
-sf_crime_last12mos_add$category <- case_when(sf_crime_last12mos_add$category == "Assault" ~ "Aggravated Assault",
-                                             TRUE ~ sf_crime_last12mos_add$category)
+#sf_crime_last12mos_add$category <- case_when(sf_crime_last12mos_add$category == "Assault" ~ "Aggravated Assault",
+#                                             TRUE ~ sf_crime_last12mos_add$category)
 
 sf_crime <- left_join(sf_crime,sf_crime_ytd,by=c("district"="district","category"="category"))
-sf_crime <- left_join(sf_crime,sf_crime_last12mos_add,by=c("district"="district","category"="category"))
+# sf_crime <- left_join(sf_crime,sf_crime_last12mos_add,by=c("district"="district","category"="category"))
 
 # process last 12 mos calculations to do comparable annualized rates and clean up unneeded columns
-sf_crime$last12mos <- sf_crime$ytd2023+sf_crime$last12mos_add
-sf_crime <- sf_crime %>% select(1:7,14,11)
+sf_crime$last12mos <- sf_crime$ytd+(sf_crime$total22-sf_crime$prior)
+#### CHECK THESE COLUMNS AND GET RIGHT #############################
+sf_crime <- sf_crime %>% select(1:7,12,11)
 
 # pull out published totals just for reference
 sf_crime_totals <- sf_crime %>% filter(category=="Total Part 1 Violent Crimes" | category=="Total Part 1 Property Crimes" | category=="Total Part 1 Crimes")
@@ -59,7 +63,7 @@ sf_crime <- sf_crime %>% filter(category!="Total Part 1 Violent Crimes" & catego
 
 # Get latest date in our file and save for
 # automating the updated date text in building tracker
-asofdate <- max(sf_crime$updated, na.rm = TRUE)
+asofdate <- max(sf_crime$asofdate, na.rm = TRUE)
 saveRDS(asofdate,"scripts/rds/asofdate.rds")
 
 # Divide into citywide_crime and district_crime files
@@ -70,7 +74,7 @@ district_crime <- sf_crime %>% filter(district!="Citywide")
 districts_geo$district <- str_to_title(districts_geo$district)
 district_crime <- full_join(districts_geo %>% select(5:7), district_crime, by="district")
 # add date in field if there's any missing
-district_crime$updated[is.na(district_crime$updated)] <- asofdate
+district_crime$asofdate[is.na(district_crime$asofdate)] <- asofdate
 # add zeros where there were no crimes tallied that year
 district_crime[is.na(district_crime)] <- 0
 
@@ -112,7 +116,7 @@ write_csv(district_yearly,"data/output/yearly/district_yearly.csv")
 sf_population <- 815201
 
 # add date in field if there's any missing
-citywide_crime$updated[is.na(citywide_crime$updated)] <- asofdate
+citywide_crime$asofdate[is.na(citywide_crime$asofdate)] <- asofdate
 # add zeros where there were no crimes tallied that year
 citywide_crime[is.na(citywide_crime)] <- 0
 # add 4-year annualized averages
