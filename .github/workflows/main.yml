@@ -1,0 +1,32 @@
+name: Build safety trackers
+
+# Controls when the workflow will run
+on:
+  schedule:
+    - cron: '55 14 * * 1'
+      # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  render:
+    name: Build SF safety tracker pages
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: r-lib/actions/setup-r@v2
+      - name: Set up pandoc for Rmd docs
+        uses: r-lib/actions/setup-pandoc@v2
+      - name: Install gdal
+        run: |
+          brew install gdal
+      - name: Install dependencies and packages
+        run: Rscript -e 'install.packages(c("sf","tidyverse","leaflet","leaflet.extras","leaflet.providers","htmlwidgets","pdftools","zoo","readxl","htmltools","rmarkdown"))'
+      - name: Process recent SF data
+        run: Rscript scripts/process_sf_crime_data.R
+      - name: Render markdowns from central script
+        run: Rscript scripts/run_markdowns.R
+      - name: Commit results
+        run: |
+          git add -A
+          git commit -m 'New crime data collected' || echo "No changes"
+          git push origin || echo "No changes to commit"
