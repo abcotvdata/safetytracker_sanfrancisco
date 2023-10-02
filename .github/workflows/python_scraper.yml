@@ -16,11 +16,9 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
-    - name: Install dependencies
-      run: |
-        pip install jupyter
-        pip install pandas
-        pip install TableauScraper
+    - run: pip install notebook requests bs4
+    - name: Run scraper
+      run: jupyter execute scrape.ipynb
     - name: Run notebook
       run: |
         jupyter nbconvert --to notebook --execute sf_crime_scraper.ipynb
