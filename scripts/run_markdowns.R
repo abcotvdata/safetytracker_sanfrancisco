@@ -4,6 +4,8 @@ library(rmarkdown)
 # Includes loading pre-processed and stored dfs
 # Grouped by each page to allow for individual or mass processing
 
+asofdate <- readRDS("scripts/rds/asofdate.rds")
+
 # MURDERS
 # Load RDS
 murders_beat <- readRDS("scripts/rds/murders_district.rds")
