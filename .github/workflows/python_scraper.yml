@@ -18,10 +18,7 @@ jobs:
         python-version: '3.x'
     - run: pip install notebook requests bs4
     - name: Run scraper
-      run: jupyter execute scrape.ipynb
-    - name: Run notebook
-      run: |
-        jupyter nbconvert --to notebook --execute sf_crime_scraper.ipynb
+      run: jupyter execute sf_crime_scraper.ipynb
     - name: Commit results
       run: |
         git add -A
