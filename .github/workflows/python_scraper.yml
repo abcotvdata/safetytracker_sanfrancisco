@@ -22,10 +22,8 @@ jobs:
     - name: Run notebook
       run: |
         jupyter nbconvert --to notebook --execute sf_crime_scraper.ipynb
-    - name: Commit changes
+    - name: Commit results
       run: |
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        git add sf_crime_scraper.ipynb
-        git commit -m "Update sf_crime_scraper.ipynb"
-        git push
+        git add -A
+        git commit -m 'New SF crime data collected' || echo "No changes"
+        git push origin || echo "No changes to commit"
