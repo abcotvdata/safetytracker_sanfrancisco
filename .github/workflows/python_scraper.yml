@@ -16,7 +16,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
-    - run: pip install notebook requests bs4
+    - run: pip install notebook jupyter pandas TableauScraper datetime
     - name: Run scraper
       run: jupyter execute sf_crime_scraper.ipynb
     - name: Commit results
