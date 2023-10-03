@@ -8,7 +8,7 @@ asofdate <- readRDS("scripts/rds/asofdate.rds")
 
 # MURDERS
 # Load RDS
-murders_beat <- readRDS("scripts/rds/murders_district.rds")
+murders_district <- readRDS("scripts/rds/murders_district.rds")
 murders_city <- readRDS("scripts/rds/murders_city.rds")
 # Render page
 rmarkdown::render('scripts/San_Francisco_Safety_Tracker.Rmd', 
@@ -17,7 +17,7 @@ rmarkdown::render('scripts/San_Francisco_Safety_Tracker.Rmd',
 
 # BURGLARIES
 # Load RDS
-burglaries_beat <- readRDS("scripts/rds/burglaries_district.rds")
+burglaries_district <- readRDS("scripts/rds/burglaries_district.rds")
 burglaries_city <- readRDS("scripts/rds/burglaries_city.rds")
 # Render page
 rmarkdown::render('scripts/San_Francisco_Safety_Tracker_Burglaries.Rmd', 
@@ -26,7 +26,7 @@ rmarkdown::render('scripts/San_Francisco_Safety_Tracker_Burglaries.Rmd',
 
 # THEFTS
 # Load RDS
-larcenies_beat <- readRDS("scripts/rds/thefts_district.rds")
+larcenies_district <- readRDS("scripts/rds/thefts_district.rds")
 larcenies_city <- readRDS("scripts/rds/thefts_city.rds")
 # Render page
 rmarkdown::render('scripts/San_Francisco_Safety_Tracker_Thefts.Rmd', 
@@ -35,7 +35,7 @@ rmarkdown::render('scripts/San_Francisco_Safety_Tracker_Thefts.Rmd',
 
 # AUTO THEFTS
 # Load RDS
-autothefts_beat <- readRDS("scripts/rds/autothefts_district.rds")
+autothefts_district <- readRDS("scripts/rds/autothefts_district.rds")
 autothefts_city <- readRDS("scripts/rds/autothefts_city.rds")
 # Render page
 rmarkdown::render('scripts/San_Francisco_Safety_Tracker_VehicleThefts.Rmd', 
@@ -44,7 +44,7 @@ rmarkdown::render('scripts/San_Francisco_Safety_Tracker_VehicleThefts.Rmd',
 
 # ROBBERIES
 # Load RDS
-robberies_beat <- readRDS("scripts/rds/robberies_district.rds")
+robberies_district <- readRDS("scripts/rds/robberies_district.rds")
 robberies_city <- readRDS("scripts/rds/robberies_city.rds")
 # Render page
 rmarkdown::render('scripts/San_Francisco_Safety_Tracker_Robberies.Rmd', 
@@ -53,7 +53,7 @@ rmarkdown::render('scripts/San_Francisco_Safety_Tracker_Robberies.Rmd',
 
 # ASSAULTS
 # Load RDS
-assaults_beat <- readRDS("scripts/rds/assaults_district.rds")
+assaults_district <- readRDS("scripts/rds/assaults_district.rds")
 assaults_city <- readRDS("scripts/rds/assaults_city.rds")
 # Render page
 rmarkdown::render('scripts/San_Francisco_Safety_Tracker_Assaults.Rmd', 
@@ -62,7 +62,7 @@ rmarkdown::render('scripts/San_Francisco_Safety_Tracker_Assaults.Rmd',
 
 # SEXUAL ASSAULTS
 # Load RDS
-sexassaults_beat <- readRDS("scripts/rds/sexassaults_district.rds")
+sexassaults_district <- readRDS("scripts/rds/sexassaults_district.rds")
 sexassaults_city <- readRDS("scripts/rds/sexassaults_city.rds")
 # Render page
 rmarkdown::render('scripts/San_Francisco_Safety_Tracker_SexualAssaults.Rmd', 
