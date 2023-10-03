@@ -1,5 +1,7 @@
 name: Python Scraper
 
+# Runs the scraper late Monday evening, after SFPD usually updates;
+# if for some reason they update late, need to run workflow manually
 on:
   schedule:
     - cron: '0 23 * * 1'
