@@ -1,10 +1,10 @@
 name: Python Scraper
 
-# Runs the scraper late Monday evening, after SFPD usually updates;
+# Runs the scraper late Tuesday, after SFPD usually updates;
 # if for some reason they update late, need to run workflow manually
 on:
   schedule:
-    - cron: '0 23 * * 1'
+    - cron: '0 20 * * 2'
       # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
