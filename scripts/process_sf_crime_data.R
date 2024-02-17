@@ -29,10 +29,12 @@ sf_crime_ytd <- read_csv("data/source/recent/sfcrime_ytd.csv",
 # Combined the annual files and order columns for building tracker table
 sf_crime <- cbind(sf_crime_2020,sf_crime_2021,sf_crime_2022, sf_crime_2023)
 
-sf_crime <- sf_crime %>% select(4,1,2,6,10,14,15,17)
+sf_crime <- sf_crime %>% 
+  setNames(., make.unique(names(.))) %>% 
+  select(4,1,3,7,15,16,18)
 
 # names(sf_crime) <- c("district","category","total18","total19","total20","total21", "total22", "ytd22_pdf","ytd23_pdf","update_pdf")
-names(sf_crime) <- c("district","category","total18","total19","total20","total21","total22","total23","update_pdf")
+names(sf_crime) <- c("district","category","total20","total21","total22","total23","update_pdf")
 sf_crime$category <- sub("\\*", "", sf_crime$category)
 
 # get both crime category names consistent
