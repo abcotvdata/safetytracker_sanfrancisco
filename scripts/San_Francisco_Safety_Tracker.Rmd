@@ -248,7 +248,7 @@ One way to think about the danger: three years ago, the murder rate was <h8>`r m
 
 The risk is not the same neighborhood to neighborhood.
 
-ABC7's data team looked at the San Francisco Police Department's crime incident data by police district from 2019 through `r format(asofdate, "%B %d, %Y")`. Totals here include murders, but not involuntary manslaughter or justifiable homicide.
+ABC7's data team looked at the San Francisco Police Department's crime incident data by police district from 2020 through `r format(asofdate, "%B %d, %Y")`. Totals here include murders, but not involuntary manslaughter or justifiable homicide.
 
 <subhead>A closer look at San Francisco homicides by neighborhood</subhead>
 
