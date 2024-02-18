@@ -58,7 +58,7 @@ sf_crime <- left_join(sf_crime,sf_crime_ytd,by=c("district"="district","category
 # process last 12 mos calculations to do comparable annualized rates and clean up unneeded columns
 sf_crime$last12mos <- sf_crime$ytd+(sf_crime$total23-sf_crime$prior)
 #### CHECK THESE COLUMNS AND GET RIGHT #############################
-sf_crime <- sf_crime %>% select(1:7,12,11)
+sf_crime <- sf_crime %>% select(1:6,11,10)
 
 # pull out published totals just for reference
 sf_crime_totals <- sf_crime %>% filter(category=="Total Part 1 Violent Crimes" | category=="Total Part 1 Property Crimes" | category=="Total Part 1 Crimes")
