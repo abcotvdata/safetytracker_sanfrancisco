@@ -230,7 +230,7 @@ Per 100,000 people<br>2020 to 2023</p>
 </div>
 </div>
 <br>
-Homicides over the last 12 months are trending <h8>`r case_when(murders_city$inc_23tolast12 >= .25 ~ " up", murders_city$inc_23tolast12<=-.25 ~ " down", TRUE ~ " about the same")` `r ifelse(murders_city$inc_23tolast12>=0,murders_city$inc_23tolast12,substring(murders_city$murders_city$inc_23tolast12,2))`%</h8> when compared to last year, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
+Homicides over the last 12 months are trending <h8>`r ifelse(murders_city$inc_23tolast12>=0," up"," down")` `r ifelse(murders_city$inc_23tolast12>=0,murders_city$inc_23tolast12,substring(murders_city$murders_city$inc_23tolast12,2))`%</h8> when compared to last year, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
 
 The murder rate over the last 12 months is <h8>`r case_when((murders_city$rate_last12-murders_city$rate_prior4years)>=0.25 ~ "up",
           (murders_city$rate_last12-murders_city$rate_prior4years)<=-0.25 ~ "down",
