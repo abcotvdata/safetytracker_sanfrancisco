@@ -152,7 +152,7 @@ district_crime <- district_crime %>%
 citywide_yearly <- citywide_crime %>% select(2:8)
 # add additional years from state archive of reported ucr crimes back to 2000
 yearly_archive <- read_csv("data/source/annual/sf_annual_state.csv")
-citywide_yearly <- right_join(citywide_yearly,yearly_archive %>% select(1:18,23),by="category") %>% select(1,8:25,2:7)
+citywide_yearly <- right_join(citywide_yearly,yearly_archive %>% select(1:20,23),by="category") %>% select(1,8:27,2:7)
 # save for annual charts  
 write_csv(citywide_yearly,"data/output/yearly/citywide_yearly.csv")
 
