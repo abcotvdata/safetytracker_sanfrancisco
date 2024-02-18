@@ -217,7 +217,7 @@ sf_population <- 815201
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Thefts<br>
 <bignumber>`r prettyNum(round(thefts_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2019 to 2022</p>
+Yearly average<br>2020 to 2023</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Theft Rate<br>
@@ -227,19 +227,19 @@ Per 100,000 people<br>Last 12 months</p>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Theft Rate<br>
 <bignumber>`r prettyNum(round(thefts_city$rate_prior4years,0),big.mark=",")`<br></bignumber><p>
-Per 100,000 people<br>2019 to 2022</p>
+Per 100,000 people<br>2020 to 2023</p>
 </div>
 </div>
 <br>
 Thefts over the last 12 months are <h8>`r ifelse(thefts_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(thefts_city$inc_prior4yearavgtolast12>=0,thefts_city$inc_prior4yearavgtolast12,substring(thefts_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
 
-The city averaged <h8>`r prettyNum(round(thefts_city$last12mos/52,0), big.mark=",")`</h8> thefts a week over the last 12 months. In 2019, that number was <h8>`r prettyNum(round(thefts_city$total19/52,0), big.mark=",")`</h8> a week.
+The city averaged <h8>`r prettyNum(round(thefts_city$last12mos/52,0), big.mark=",")`</h8> thefts a week over the last 12 months. In 2020, that number was <h8>`r prettyNum(round(thefts_city$total20/52,0), big.mark=",")`</h8> a week.
 
 Theft totals here are for larceny, which would include stealing items worth $1,000 or more. The totals also would not include those involving violence, which would be defined as robbery. So someone taking an expensive smartphone from someone's bag would be theft, taking it while pointing a firearm at the person would be instead counted as robbery.
 
 <subhead>San Francisco thefts neighborhood by neighborhood</subhead>
 
-The risk is not the same neighborhood to neighborhood. ABC7's data team looked at the San Francisco Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d, %Y")`.
+The risk is not the same neighborhood to neighborhood. ABC7's data team looked at the San Francisco Police Department's data by neighborhood from 2020 through `r format(asofdate, "%B %d, %Y")`.
 
 The map color codes each neighborhood by the theft rate over the last 12 months. The three darker blues represent neighborhoods with theft rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of thefts.
 
@@ -292,15 +292,6 @@ theftlabel <- paste(sep="",
 				<th>Rate</th>
 			</tr>
 			<tr>
-				<td>2019</td>
-				<td>",
-thefts_district$total19,
-"</td>
-				<td>",
-prettyNum(round(thefts_district$rate19,0), big.mark=","),
-"</td>
-			</tr>
-			<tr>
 				<td>2020</td>
 				<td>",
 thefts_district$total20,
@@ -309,7 +300,7 @@ thefts_district$total20,
 prettyNum(round(thefts_district$rate20,0), big.mark=","),
 "</td>
 			</tr>
-						<tr>
+			<tr>
 				<td>2021</td>
 				<td>",
 thefts_district$total21,
@@ -318,13 +309,22 @@ thefts_district$total21,
 prettyNum(round(thefts_district$rate21,0), big.mark=","),
 "</td>
 			</tr>
-									<tr>
+						<tr>
 				<td>2022</td>
 				<td>",
 thefts_district$total22,
 "</td>
 				<td>",
 prettyNum(round(thefts_district$rate22,0), big.mark=","),
+"</td>
+			</tr>
+									<tr>
+				<td>2023</td>
+				<td>",
+thefts_district$total23,
+"</td>
+				<td>",
+prettyNum(round(thefts_district$rate23,0), big.mark=","),
 "</td>
 			</tr>
 						<tr>
