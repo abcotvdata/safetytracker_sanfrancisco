@@ -18,6 +18,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+    - run: pip install --user git+https://github.com/bertrandmartel/tableau-scraping.git@f87128559b6d16bf687c6631993ebfb6d5f6ea00
     - run: pip install notebook jupyter pandas TableauScraper datetime
     - name: Run scraper
       run: jupyter execute sf_crime_scraper.ipynb
