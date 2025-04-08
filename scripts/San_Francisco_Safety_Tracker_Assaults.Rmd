@@ -216,7 +216,7 @@ sf_population <- 815201
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Assaults<br>
 <bignumber>`r prettyNum(round(assaults_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2020 to 2023</p>
+Yearly average<br>2021 to 2024</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Assault Rate<br>
@@ -226,19 +226,19 @@ Per 100,000 people<br>Last 12 months</p>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Assault Rate<br>
 <bignumber>`r prettyNum(round(assaults_city$rate_prior4years,0), big.mark=",")`<br></bignumber><p>
-Per 100,000 people<br>2020 to 2023</p>
+Per 100,000 people<br>2021 to 2024</p>
 </div>
 </div>
 <br>
 Aggravated assaults over the last 12 months are <h8>`r ifelse(assaults_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(assaults_city$inc_prior4yearavgtolast12>=0,assaults_city$inc_prior4yearavgtolast12,substring(assaults_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years, according to the San Francisco Police Department data through `r format(asofdate, "%B %d")`.
 
-The city averaged <h8>`r prettyNum(round(assaults_city$last12mos/52,0), big.mark=",")`</h8> aggravated assaults a week over the last 12 months. In 2020, that number was <h8>`r prettyNum(round(assaults_city$total20/52,0), big.mark=",")`</h8> a week.
+The city averaged <h8>`r prettyNum(round(assaults_city$last12mos/52,0), big.mark=",")`</h8> aggravated assaults a week over the last 12 months. In 2021, that number was <h8>`r prettyNum(round(assaults_city$total20/52,0), big.mark=",")`</h8> a week.
 
 The totals include only aggravated assaults, which police generally define as someone being attacked or seriously injured by another person, whether or not they used a firearm or other weapon.
 
 <subhead>A closer look at San Francisco assaults neighborhood by neighborhood</subhead>
 
-The danger is not the same neighborhood to neighborhood. ABC7's data team looked at the San Francisco Police Department's data by neighborhood from 2020 through `r format(asofdate, "%B %d, %Y")`.
+The danger is not the same neighborhood to neighborhood. ABC7's data team looked at the San Francisco Police Department's data by neighborhood from 2021 through `r format(asofdate, "%B %d, %Y")`.
 
 The map color codes each neighborhood by the aggravated assault rate over the last 12 months. The three darker blues represent neighborhoods with assault rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of aggravated assaults.
 
@@ -292,15 +292,6 @@ assaultlabel <- paste(sep="",
 				<th>Rate</th>
 			</tr>
 			<tr>
-				<td>2020</td>
-				<td>",
-assaults_district$total20,
-"</td>
-				<td>",
-prettyNum(round(assaults_district$rate20,0), big.mark=","),
-"</td>
-			</tr>
-			<tr>
 				<td>2021</td>
 				<td>",
 assaults_district$total21,
@@ -309,7 +300,7 @@ assaults_district$total21,
 prettyNum(round(assaults_district$rate21,0), big.mark=","),
 "</td>
 			</tr>
-						<tr>
+			<tr>
 				<td>2022</td>
 				<td>",
 assaults_district$total22,
@@ -318,13 +309,22 @@ assaults_district$total22,
 prettyNum(round(assaults_district$rate22,0), big.mark=","),
 "</td>
 			</tr>
-									<tr>
+						<tr>
 				<td>2023</td>
 				<td>",
 assaults_district$total23,
 "</td>
 				<td>",
 prettyNum(round(assaults_district$rate23,0), big.mark=","),
+"</td>
+			</tr>
+									<tr>
+				<td>2024</td>
+				<td>",
+assaults_district$total24,
+"</td>
+				<td>",
+prettyNum(round(assaults_district$rate24,0), big.mark=","),
 "</td>
 			</tr>
 						<tr>
