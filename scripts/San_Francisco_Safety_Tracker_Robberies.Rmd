@@ -216,7 +216,7 @@ sf_population <- 815201
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Robberies<br>
 <bignumber>`r prettyNum(round(robberies_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2020 to 2023</p>
+Yearly average<br>2021 to 2024</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Robbery Rate<br>
@@ -226,19 +226,19 @@ Per 100,000 people<br>Last 12 months</p>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Robbery Rate<br>
 <bignumber>`r round(robberies_city$rate_prior4years,0)`<br></bignumber><p>
-Per 100,000 people<br>2020 to 2023</p>
+Per 100,000 people<br>2021 to 2024</p>
 </div>
 </div>
 <br>
 Robberies over the last 12 months are <h8>`r ifelse(robberies_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(robberies_city$inc_prior4yearavgtolast12>=0,robberies_city$inc_prior4yearavgtolast12,substring(robberies_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
 
-The city averaged <h8>`r round(robberies_city$last12mos/52,0)`</h8> robberies a week over the last 12 months. In 2020, that number was <h8>`r round(robberies_city$total20/52,0)`</h8> a week.
+The city averaged <h8>`r round(robberies_city$last12mos/52,0)`</h8> robberies a week over the last 12 months. In 2021, that number was <h8>`r round(robberies_city$total21/52,0)`</h8> a week.
 
 Robbery is generally defined by police as taking something of value from someone by force or threatening force. So while someone taking a smartphone from someone's bag would be theft, taking it while pointing a firearm at the person would be robbery.
 
 <subhead>A closer look at San Francisco robberies neighborhood by neighborhood</subhead>
 
-The risk is not the same neighborhood to neighborhood. ABC7's data team looked at the San Francisco Police Department's data by neighborhood from 2020 through `r format(asofdate, "%B %d, %Y")`.
+The risk is not the same neighborhood to neighborhood. ABC7's data team looked at the San Francisco Police Department's data by neighborhood from 2021 through `r format(asofdate, "%B %d, %Y")`.
 
 The map color codes each neighborhood by the robbery rate over the last 12 months. The three darker blues represent neighborhoods with robbery rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of robberies.
 
@@ -292,15 +292,6 @@ robberylabel <- paste(sep="",
 				<th>Rate</th>
 			</tr>
 			<tr>
-				<td>2020</td>
-				<td>",
-robberies_district$total20,
-"</td>
-				<td>",
-round(robberies_district$rate20,0),
-"</td>
-			</tr>
-			<tr>
 				<td>2021</td>
 				<td>",
 robberies_district$total21,
@@ -309,7 +300,7 @@ robberies_district$total21,
 round(robberies_district$rate21,0),
 "</td>
 			</tr>
-						<tr>
+			<tr>
 				<td>2022</td>
 				<td>",
 robberies_district$total22,
@@ -318,13 +309,22 @@ robberies_district$total22,
 round(robberies_district$rate22,0),
 "</td>
 			</tr>
-									<tr>
+						<tr>
 				<td>2023</td>
 				<td>",
 robberies_district$total23,
 "</td>
 				<td>",
 round(robberies_district$rate23,0),
+"</td>
+			</tr>
+									<tr>
+				<td>2024</td>
+				<td>",
+robberies_district$total24,
+"</td>
+				<td>",
+round(robberies_district$rate24,0),
 "</td>
 			</tr>
 						<tr>
