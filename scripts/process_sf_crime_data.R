@@ -17,6 +17,7 @@ sf_crime_2020 <- readRDS("scripts/rds/sf_crime_2020.rds")
 sf_crime_2021 <- readRDS("scripts/rds/sf_crime_2021.rds")
 sf_crime_2022 <- readRDS("scripts/rds/sf_crime_2022.rds")
 sf_crime_2023 <- readRDS("scripts/rds/sf_crime_2023.rds")
+sf_crime_2024 <- readRDS("scripts/rds/sf_crime_2024.rds")
 # San Francisco police districts geo file with populations
 districts_geo <- readRDS("scripts/rds/sfpd_districts.rds")
 # recent crime files scraped from SFPD's Tableau site with Pyton sf_crime_scraper.ipynb
@@ -27,14 +28,14 @@ sf_crime_ytd <- read_csv("data/source/recent/sfcrime_ytd.csv",
 #sf_crime_ytd <- readRDS("scripts/rds/sf_crime_ytd.rds")
 
 # Combined the annual files and order columns for building tracker table
-sf_crime <- cbind(sf_crime_2020,sf_crime_2021,sf_crime_2022, sf_crime_2023)
+sf_crime <- cbind(sf_crime_2020,sf_crime_2021,sf_crime_2022, sf_crime_2023, sf_crime_2024)
 
 sf_crime <- sf_crime %>% 
   setNames(., make.unique(names(.))) %>% 
   select(4,1,3,7,15,16,18)
 
 # names(sf_crime) <- c("district","category","total18","total19","total20","total21", "total22", "ytd22_pdf","ytd23_pdf","update_pdf")
-names(sf_crime) <- c("district","category","total20","total21","total22","total23","update_pdf")
+names(sf_crime) <- c("district","category","total20","total21","total22","total23","total24","update_pdf")
 sf_crime$category <- sub("\\*", "", sf_crime$category)
 
 # get both crime category names consistent
@@ -83,21 +84,22 @@ district_crime[is.na(district_crime)] <- 0
 
 
 # add 4-year totals and annualized averages
-district_crime$total_prior4years <- district_crime$total20+district_crime$total21+
-  district_crime$total22+
-  district_crime$total23
+district_crime$total_prior4years <- district_crime$total21+district_crime$total22+
+  district_crime$total23+
+  district_crime$total24
 district_crime$avg_prior4years <- round((district_crime$total_prior4years/4),1)
 
 # now add the increases or change percentages
-district_crime$inc_20to23 <- round(district_crime$total23/district_crime$total20*100-100,1)
-district_crime$inc_20tolast12 <- round(district_crime$last12mos/district_crime$total20*100-100,1)
-district_crime$inc_23tolast12 <- round(district_crime$last12mos/district_crime$total23*100-100,1)
+district_crime$inc_21to24 <- round(district_crime$total24/district_crime$total21*100-100,1)
+district_crime$inc_21tolast12 <- round(district_crime$last12mos/district_crime$total21*100-100,1)
+district_crime$inc_24tolast12 <- round(district_crime$last12mos/district_crime$total24*100-100,1)
 district_crime$inc_prior4yearavgtolast12 <- round((district_crime$last12mos/district_crime$avg_prior4years)*100-100,0)
 # add crime rates for each year
 district_crime$rate20 <- round((district_crime$total20/district_crime$population)*100000,1)
 district_crime$rate21 <- round((district_crime$total21/district_crime$population)*100000,1)
 district_crime$rate22 <- round((district_crime$total22/district_crime$population)*100000,1)
 district_crime$rate23 <- round((district_crime$total23/district_crime$population)*100000,1)
+district_crime$rate24 <- round((district_crime$total24/district_crime$population)*100000,1)
 district_crime$rate_last12 <- round((district_crime$last12mos/district_crime$population)*100000,1)
 district_crime$rate_prior4years <- 
   round((district_crime$avg_prior4years/district_crime$population)*100000,1)
@@ -123,21 +125,22 @@ citywide_crime$asofdate[is.na(citywide_crime$asofdate)] <- asofdate
 # add zeros where there were no crimes tallied that year
 citywide_crime[is.na(citywide_crime)] <- 0
 # add 4-year annualized averages
-citywide_crime$total_prior4years <- citywide_crime$total20+citywide_crime$total21+
-  citywide_crime$total22+
-  citywide_crime$total23
+citywide_crime$total_prior4years <- citywide_crime$total21+citywide_crime$total22+
+  citywide_crime$total23+
+  citywide_crime$total24
 citywide_crime$avg_prior4years <- round((citywide_crime$total_prior4years/4),1)
 
 # now add the increases or change percentages
-citywide_crime$inc_20to23 <- round(citywide_crime$total23/citywide_crime$total20*100-100,1)
-citywide_crime$inc_20tolast12 <- round(citywide_crime$last12mos/citywide_crime$total20*100-100,1)
-citywide_crime$inc_23tolast12 <- round(citywide_crime$last12mos/citywide_crime$total23*100-100,1)
+citywide_crime$inc_21to24 <- round(citywide_crime$total23/citywide_crime$total20*100-100,1)
+citywide_crime$inc_21tolast12 <- round(citywide_crime$last12mos/citywide_crime$total21*100-100,1)
+citywide_crime$inc_24tolast12 <- round(citywide_crime$last12mos/citywide_crime$total24*100-100,1)
 citywide_crime$inc_prior4yearavgtolast12 <- round((citywide_crime$last12mos/citywide_crime$avg_prior4years)*100-100,0)
 # add crime rates for each year
 citywide_crime$rate20 <- round((citywide_crime$total20/sf_population)*100000,1)
 citywide_crime$rate21 <- round((citywide_crime$total21/sf_population)*100000,1)
 citywide_crime$rate22 <- round((citywide_crime$total22/sf_population)*100000,1)
 citywide_crime$rate23 <- round((citywide_crime$total23/sf_population)*100000,1)
+citywide_crime$rate24 <- round((citywide_crime$total24/sf_population)*100000,1)
 citywide_crime$rate_last12 <- round((citywide_crime$last12mos/sf_population)*100000,1)
 # 4 yr rate
 citywide_crime$rate_prior4years <- 
