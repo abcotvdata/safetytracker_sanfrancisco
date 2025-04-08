@@ -215,7 +215,7 @@ sf_population <- 815201
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Vehicle Thefts<br>
 <bignumber>`r prettyNum(round(autothefts_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2020 to 2023</p>
+Yearly average<br>2021 to 2024</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Vehicle Theft Rate<br>
@@ -225,19 +225,19 @@ Per 100,000 people<br>Last 12 months</p>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Vehicle Theft Rate<br>
 <bignumber>`r round(autothefts_city$rate_prior4years,0)`<br></bignumber><p>
-Per 100,000 people<br>2020 to 2023</p>
+Per 100,000 people<br>2021 to 2024</p>
 </div>
 </div>
 <br>
 Vehicle thefts over the last 12 months are <h8>`r ifelse(autothefts_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(autothefts_city$inc_prior4yearavgtolast12>=0,autothefts_city$inc_prior4yearavgtolast12,substring(autothefts_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
 
-The city averaged <h8>`r round(autothefts_city$last12mos/52,0)`</h8> stolen vehicles a week over the last 12 months. In 2020, that number was <h8>`r round(autothefts_city$total20/52,0)`</h8> a week.
+The city averaged <h8>`r round(autothefts_city$last12mos/52,0)`</h8> stolen vehicles a week over the last 12 months. In 2021, that number was <h8>`r round(autothefts_city$total21/52,0)`</h8> a week.
 
 The totals included here are for theft of a motor vehicle, and do not include thefts of parts of vehicles or thefts of personal valuables from vehicles.
 
 <subhead>A closer look at San Francisco vehicle thefts by neighborhood</subhead>
 
-The risk is not the same neighborhood to neighborhood. ABC7's data team looked at the San Francisco Police Department's data by neighborhood from 2020 through `r format(asofdate, "%B %d, %Y")`.
+The risk is not the same neighborhood to neighborhood. ABC7's data team looked at the San Francisco Police Department's data by neighborhood from 2021 through `r format(asofdate, "%B %d, %Y")`.
 
 The map color codes each neighborhood by the vehicle theft rate over the last 12 months. The three darker blues represent neighborhoods with vehicle theft rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of vehicles stolen.
 
@@ -289,15 +289,6 @@ autotheftlabel <- paste(sep="",
 				<th>Rate</th>
 			</tr>
 			<tr>
-				<td>2020</td>
-				<td>",
-autothefts_district$total20,
-"</td>
-				<td>",
-prettyNum(round(autothefts_district$rate20,0),big.mark =","),
-"</td>
-			</tr>
-			<tr>
 				<td>2021</td>
 				<td>",
 autothefts_district$total21,
@@ -306,7 +297,7 @@ autothefts_district$total21,
 prettyNum(round(autothefts_district$rate21,0),big.mark =","),
 "</td>
 			</tr>
-						<tr>
+			<tr>
 				<td>2022</td>
 				<td>",
 autothefts_district$total22,
@@ -315,13 +306,22 @@ autothefts_district$total22,
 prettyNum(round(autothefts_district$rate22,0),big.mark =","),
 "</td>
 			</tr>
-									<tr>
+						<tr>
 				<td>2023</td>
 				<td>",
 autothefts_district$total23,
 "</td>
 				<td>",
 prettyNum(round(autothefts_district$rate23,0),big.mark =","),
+"</td>
+			</tr>
+									<tr>
+				<td>2024</td>
+				<td>",
+autothefts_district$total24,
+"</td>
+				<td>",
+prettyNum(round(autothefts_district$rate24,0),big.mark =","),
 "</td>
 			</tr>
 						<tr>
