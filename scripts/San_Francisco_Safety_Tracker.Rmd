@@ -216,7 +216,7 @@ You can choose which crime to explore: <select onchange="window.location=this.va
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicides<br>
 <bignumber>`r prettyNum(round(murders_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2020 to 2023</p>
+Yearly average<br>2021 to 2024</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Homicide Rate<br>
@@ -226,19 +226,19 @@ Per 100,000 people<br>Last 12 months</p>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicide Rate<br>
 <bignumber>`r murders_city$rate_prior4years`<br></bignumber><p>
-Per 100,000 people<br>2020 to 2023</p>
+Per 100,000 people<br>2021 to 2024</p>
 </div>
 </div>
 <br>
-Homicides over the last 12 months are trending <h8>`r ifelse(murders_city$inc_23tolast12>=0," up"," down")` `r ifelse(murders_city$inc_23tolast12>=0,murders_city$inc_23tolast12,substring(murders_city$inc_23tolast12,2))`%</h8> when compared to last year, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
+Homicides over the last 12 months are trending <h8>`r ifelse(murders_city$inc_24tolast12>=0," up"," down")` `r ifelse(murders_city$inc_24tolast12>=0,murders_city$inc_24tolast12,substring(murders_city$inc_24tolast12,2))`%</h8> when compared to last year, according to San Francisco Police Department data through `r format(asofdate, "%B %d")`.
 
 The murder rate over the last 12 months is <h8>`r case_when((murders_city$rate_last12-murders_city$rate_prior4years)>=0.25 ~ "up",
           (murders_city$rate_last12-murders_city$rate_prior4years)<=-0.25 ~ "down",
           TRUE ~ "about the same ")`</h8> compared to the annual average over the last four years.
 
-The city averaged about <h8>`r round(murders_city$last12mos/12,0)`</h8> homicides a month over the last 12 months. In 2020, that number was about <h8>`r round(murders_city$total20/12,0)`</h8> a month.
+The city averaged about <h8>`r round(murders_city$last12mos/12,0)`</h8> homicides a month over the last 12 months. In 2021, that number was about <h8>`r round(murders_city$total21/12,0)`</h8> a month.
 
-One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate20`</h8> per 100,000 residents. That's lower than the risk of dying in a vehicle crash in California. The rate has risen slightly to <h8>`r murders_city$rate_last12`</h8> in the last 12 months.
+One way to think about the danger: four years ago, the murder rate was <h8>`r murders_city$rate21`</h8> per 100,000 residents. That's lower than the risk of dying in a vehicle crash in California. The rate has risen slightly to <h8>`r murders_city$rate_last12`</h8> in the last 12 months.
 <br>
 <br>
 <!-- <subhead>Risk of being murdered in San Francisco vs. other causes of death in Harris County</subhead> -->
@@ -248,7 +248,7 @@ One way to think about the danger: three years ago, the murder rate was <h8>`r m
 
 The risk is not the same neighborhood to neighborhood.
 
-ABC7's data team looked at the San Francisco Police Department's crime incident data by police district from 2020 through `r format(asofdate, "%B %d, %Y")`. Totals here include murders, but not involuntary manslaughter or justifiable homicide.
+ABC7's data team looked at the San Francisco Police Department's crime incident data by police district from 2021 through `r format(asofdate, "%B %d, %Y")`. Totals here include murders, but not involuntary manslaughter or justifiable homicide.
 
 <subhead>A closer look at San Francisco homicides by neighborhood</subhead>
 
@@ -306,15 +306,6 @@ murderlabel <- paste(sep="",
 				<th>Rate</th>
 			</tr>
 			<tr>
-				<td>2020</td>
-				<td>",
-murders_district$total20,
-"</td>
-				<td>",
-murders_district$rate20,
-"</td>
-			</tr>
-			<tr>
 				<td>2021</td>
 				<td>",
 murders_district$total21,
@@ -323,7 +314,7 @@ murders_district$total21,
 murders_district$rate21,
 "</td>
 			</tr>
-						<tr>
+			<tr>
 				<td>2022</td>
 				<td>",
 murders_district$total22,
@@ -332,13 +323,22 @@ murders_district$total22,
 murders_district$rate22,
 "</td>
 			</tr>
-									<tr>
+						<tr>
 				<td>2023</td>
 				<td>",
 murders_district$total23,
 "</td>
 				<td>",
 murders_district$rate23,
+"</td>
+			</tr>
+									<tr>
+				<td>2024</td>
+				<td>",
+murders_district$total24,
+"</td>
+				<td>",
+murders_district$rate24,
 "</td>
 			</tr>
 						<tr>
