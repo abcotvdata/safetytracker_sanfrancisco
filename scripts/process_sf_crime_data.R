@@ -130,7 +130,7 @@ citywide_crime$total_prior4years <- citywide_crime$total21+citywide_crime$total2
 citywide_crime$avg_prior4years <- round((citywide_crime$total_prior4years/4),1)
 
 # now add the increases or change percentages
-citywide_crime$inc_21to24 <- round(citywide_crime$total23/citywide_crime$total20*100-100,1)
+citywide_crime$inc_21to24 <- round(citywide_crime$total24/citywide_crime$total21*100-100,1)
 citywide_crime$inc_21tolast12 <- round(citywide_crime$last12mos/citywide_crime$total21*100-100,1)
 citywide_crime$inc_24tolast12 <- round(citywide_crime$last12mos/citywide_crime$total24*100-100,1)
 citywide_crime$inc_prior4yearavgtolast12 <- round((citywide_crime$last12mos/citywide_crime$avg_prior4years)*100-100,0)
