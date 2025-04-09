@@ -95,7 +95,6 @@ district_crime$inc_21tolast12 <- round(district_crime$last12mos/district_crime$t
 district_crime$inc_24tolast12 <- round(district_crime$last12mos/district_crime$total24*100-100,1)
 district_crime$inc_prior4yearavgtolast12 <- round((district_crime$last12mos/district_crime$avg_prior4years)*100-100,0)
 # add crime rates for each year
-district_crime$rate20 <- round((district_crime$total20/district_crime$population)*100000,1)
 district_crime$rate21 <- round((district_crime$total21/district_crime$population)*100000,1)
 district_crime$rate22 <- round((district_crime$total22/district_crime$population)*100000,1)
 district_crime$rate23 <- round((district_crime$total23/district_crime$population)*100000,1)
@@ -136,7 +135,6 @@ citywide_crime$inc_21tolast12 <- round(citywide_crime$last12mos/citywide_crime$t
 citywide_crime$inc_24tolast12 <- round(citywide_crime$last12mos/citywide_crime$total24*100-100,1)
 citywide_crime$inc_prior4yearavgtolast12 <- round((citywide_crime$last12mos/citywide_crime$avg_prior4years)*100-100,0)
 # add crime rates for each year
-citywide_crime$rate20 <- round((citywide_crime$total20/sf_population)*100000,1)
 citywide_crime$rate21 <- round((citywide_crime$total21/sf_population)*100000,1)
 citywide_crime$rate22 <- round((citywide_crime$total22/sf_population)*100000,1)
 citywide_crime$rate23 <- round((citywide_crime$total23/sf_population)*100000,1)
