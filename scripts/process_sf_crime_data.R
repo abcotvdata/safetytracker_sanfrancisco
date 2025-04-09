@@ -35,7 +35,7 @@ sf_crime <- sf_crime %>%
   select(4,1,3,7,12,17,19)
 
 # names(sf_crime) <- c("district","category","total18","total19","total20","total21", "total22", "ytd22_pdf","ytd23_pdf","update_pdf")
-names(sf_crime) <- c("district","category","total20","total21","total22","total23","total24","update_pdf")
+names(sf_crime) <- c("district","category","total21","total22","total23","total24","update_pdf")
 sf_crime$category <- sub("\\*", "", sf_crime$category)
 
 # get both crime category names consistent
