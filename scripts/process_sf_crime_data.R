@@ -32,7 +32,7 @@ sf_crime <- cbind(sf_crime_2021,sf_crime_2022, sf_crime_2023, sf_crime_2024)
 
 sf_crime <- sf_crime %>% 
   setNames(., make.unique(names(.))) %>% 
-  select(4,1,7,15,16,21,19)
+  select(4,1,3,7,12,17,19)
 
 # names(sf_crime) <- c("district","category","total18","total19","total20","total21", "total22", "ytd22_pdf","ytd23_pdf","update_pdf")
 names(sf_crime) <- c("district","category","total20","total21","total22","total23","total24","update_pdf")
