@@ -368,7 +368,7 @@ san_francisco_murder_map <- leaflet(murders_district, options = leafletOptions(z
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
   setView(-122.45, 37.75, zoom = 12) %>% 
-  addProviderTiles(provider = "CartoDB.Positron") %>%
+  addTiles(urlTemplate = "https://pmtiles-raster.launch.studioshare.wds.io/styles/white-abc/{z}/{x}/{y}.png") %>%
   addPolygons(color = "white", 
               popup = murderlabel,
               popupOptions = popupOptions(maxWidth ="200", 
